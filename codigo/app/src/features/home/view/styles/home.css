@@ -47,6 +47,8 @@ ion-icon{
 }
 .vendas{
     background-color: rgb(115, 207, 253);
+    min-height: 900px;
+    height: 100%;
 }
 .produtos{
     padding-top: 30px;
