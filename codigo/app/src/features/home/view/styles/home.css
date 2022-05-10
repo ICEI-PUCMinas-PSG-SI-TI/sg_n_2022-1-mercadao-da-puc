@@ -1,64 +1,76 @@
-/*Cabeçalho*/
-.cabecalho{
-    background-color:rgb(38, 177, 247);
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.logo img{
+    width: 100%;
 }
 .logo{
-   padding-top: 40px;
+}
+.search{
+    text-align: right;
+    padding-top: 20px;
+}
+.searchInput{
+   width: 90%;
+   height: 40px;
+}
+
+
+.textos{
+    background-color: aquamarine;
+}
+.loginDiv{
+    padding-top: 20px;
+}
+.login{
+    text-decoration: none;
+    color: black;
+    padding-left: 20px;
+}
+.comprasDiv{
+    padding-top: 20px;
+    
+}
+.compras{
+    text-decoration: none;
+    color: black;
+    padding-left: 30px;
+}
+.cart{
+    text-decoration: none;
+    color: black;
+    padding-left: 30px;
+}
+
+.menu{
+    min-width: 100%;
+    text-align: center;
+}
+.menu a{
+ color: red;
+}
+.carousel-item img{
+    max-height: 300px;
+}
+.productRow img{
+    width: 100%;
+    margin-top: 20px;
+}
+.productRow p{
+ text-align: center;
 }
 .titulo{
-    padding-top: 40px;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: aliceblue;
-}
-
-/* Perfil */
-.perfil{
-    background-color:rgb(38, 177, 247);
-}
-.nav-item a:hover{
-    color: rgb(38, 177, 247);
-}
-
-.rounded-circle{
-    max-width: 100%;
-    height: 220px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-}
-.teste1{
-    max-width: 100%;
-}
-ion-icon{
-    font-size: 32px;
-}
-/* Vendas */
-#navbarSupportedContent{
-    padding-left: 210px;
-    font-size: x-large;
-}
-#servicos a{
-    color: white;
-}
-.nav-item a{
-    color: white;
-}
-#servico1{
-    color: black !important;
-}
-.vendas{
-    background-color: rgb(115, 207, 253);
-    min-height: 900px;
-    height: 100%;
-}
-.produtos{
-    padding-top: 30px;
-}
-.produtos p{
     text-align: center;
 }
-/*Rodapé */
-.footer{
-    background-color: rgb(38, 177, 247);
+.contatoCol{
     text-align: center;
-    padding-top: 15px;
+}
+.contatoCol i{
+    padding: 20px 10px;
+}
+.footerCopyright{
+    text-align: center;
+    background-color: #1d1919;
+    color: purple;
 }
