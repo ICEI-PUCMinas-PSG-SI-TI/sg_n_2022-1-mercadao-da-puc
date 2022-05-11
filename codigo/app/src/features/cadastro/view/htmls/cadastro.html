@@ -11,23 +11,27 @@
           
             // Function to check Whether both passwords
             // is same or not.
-            function checkPassword(form) {
-                pwd = form.pwd.value;
-                pwd2 = form.pwd2.value;
+            function checkPassword() {
+                var pwd = document.getElementById('pwd').value;
+                log(pwd);
+                var pwd2 = document.getElementById('pwd2').value;
+               
+
   
                 // If password not entered
-                if (pwd == '')
+                if (pwd == ''){
                     alert ("Coloque uma senha");
+                    return false;
+                  }
                       
                 // If confirm password not entered
-                else if (pwd2 == '')
+                else if (pwd2 == ''){
                     alert ("Confirme a senha");
-                      
-                // If Not same return False.    
-                else if (pwd != pw2) {
-                    alert ("Senhas diferentes.Tente novamente...")
                     return false;
                 }
+                // If Not same return False.  
+                
+                
   
                 // If same return True.
                 else{
@@ -54,10 +58,10 @@
   
 <div class="container">
   <h2>Cadastre-se</h2>
-  <form action="/action_page.php">
+  <form onSubmit = "return checkPassword()">
     <div class="form-group">
       <label for="nome">Nome:</label>
-      <input type="nome" class="form-control" id="email" placeholder="Enter Name" name="nome">
+      <input type="nome" class="form-control" id="nome" placeholder="Enter Name" name="nome">
     </div><br>
     <div class="form-group">
   <label for="sel1">Qual unidade você estuda/trabalha?:</label>
@@ -78,7 +82,7 @@
     </div><br>
     <div class="form-group">
       <label for="cel">Numero para contato:</label>
-      <input type="number" class="form-control" id="email" placeholder="Numero" name="cel">
+      <input type="number" class="form-control" id="number" placeholder="Numero" name="number">
     </div><br>
     <div class="form-group">
       <label for="email">Email:</label>
@@ -86,7 +90,7 @@
     </div><br>
     <div class="form-group">
       <label for="email">Confirmação de Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Confirm email" name="email">
+      <input type="email" class="form-control" id="emailConfirmation" placeholder="Confirm email" name="emailConfirmation">
     </div><br>
     <div class="form-group">
       <label for="pwd">Senha:</label>
@@ -94,27 +98,23 @@
     </div><br>
     <div class="form-group">
       <label for="pwd">Confirme a Senha:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Confirm password" name="pwd2">
+      <input type="password" class="form-control" id="pwd2" placeholder="Confirm password" name="pwd2">
     </div><br>
     <div class="form-group">
       <label for="pix">Pix:</label>
-      <input type="email" class="form-control" id="email" placeholder="Pix" name="email">
+      <input type="email" class="form-control" id="pix" placeholder="Pix" name="pix">
     </div><br>
   <div class="form-group">
     <label for="inputlg">Descrição</label>
     <input class="form-control input-lg" id="inputlg" type="text">
   </div>
-    <button type="button" class="btn btn-success">Cadastrar</button>
+    <button type = "submit" class="btn btn-success">Cadastrar</button>
   </form><br>
   <div class="container">
     <h5>Ja possui cadastro?</h5>
   <a href="../../../login/view/htmls/login.html" data-toggle="tooltip" title="login">Faça login aqui!</a>
 </div>
-<script>
-$(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip();   
-});
-</script>
+
   
 
 </div>
