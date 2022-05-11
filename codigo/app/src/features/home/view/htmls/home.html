@@ -21,15 +21,16 @@
       src="https://kit.fontawesome.com/b139898041.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="icon" type="image/x-icon" href="../../res/img/PUC2.png">
     <title>Mercadão PUC</title>
   </head>
   <body>
-    <header class="container">
+    <header class="container-fluid headerContainer">
       <div class="row">
-        <div class="col-lg-1 logo">
+        <div class="col-lg-1 col-md-2 logo">
           <img src="../../res/img/PUC2.png" alt="LOGO" />
         </div>
-        <form action="" class="col-lg-7 search">
+        <form action="" class="col-lg-8 col-md-10 search">
           <input
             type="text"
             placeholder="Estou procurando por..."
@@ -39,47 +40,55 @@
             <i class="fa-solid fa-magnifying-glass fa-lg"></i>
           </button>
         </form>
-        <div class="col-lg-4 comprasDiv">
-          <a href="#" class="login"><span> Faça seu login</span></a>
-          <a href="#" class="compras"><span>COMPRAS</span></a>
-          <a href="#" class="cart"
-            ><i class="fa-solid fa-cart-shopping fa-lg"></i>
+      
+          <div class="col-lg-1 col-md-4 loginDiv">
+            <a href="#" class="login"><span> Cadastre-se</span></a>
+          </div>
+          <div class="col-lg-1 col-md-4 comprasDiv">
+            <a href="#" class="compras"><span>Compras</span></a>
+          </div>  
+          
+          <div class="col-lg-1 col-md-4 cartDiv">
+            <a href="#" class="cart"
+              ><i class="fa-solid fa-cart-shopping fa-lg"></i>
             <span class="textCart">Carrinho</span></a
           >
+        </div>
         </div>
       </div>
       <div class="row">
         <nav class="col-12">
           <ul class="nav menu justify-content-center">
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">Roupas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">Eletrônicos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">Acessórios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">Livros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">Esportes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">Aulas particulares</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link btnAnunciar" href="#"
+                ><button type="button" class="btn btn-outline-danger btn-lg">
+                  <i class="fa-solid fa-camera-retro"></i> Anunciar
+                </button></a
+              >
             </li>
           </ul>
         </nav>
       </div>
     </header>
-    <main class="container">
+    <main class="container-fluid mainContainer">
       <div class="row">
         <div class="col-12">
           <div
@@ -90,21 +99,21 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img
-                  src="../../res/img/image.jpg"
+                  src="../../res/img/carousel3.png"
                   class="d-block w-100"
                   alt="..."
                 />
               </div>
               <div class="carousel-item">
                 <img
-                  src="../../res/img/image.jpg"
+                  src="../../res/img/carousel.png"
                   class="d-block w-100"
                   alt="..."
                 />
               </div>
               <div class="carousel-item">
                 <img
-                  src="../../res/img/image.jpg"
+                  src="../../res/img/carousel2.png"
                   class="d-block w-100"
                   alt="..."
                 />
@@ -137,48 +146,51 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <h1 class="recentes">Recentes</h1>
+      </div>
       <div class="row productRow">
-        <div class="col-3 productCol">
-          <img src="../../res/img/image.jpg" alt="" />
-          <p>Vestido rosa</p>
-          <p><strong>R$50</strong></p>
+        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
+          <img src="../../res/img/notebook.jpeg" alt="" />
+          <p>Notebook ITAUTEC</p>
+          <p><strong>R$500</strong></p>
         </div>
-        <div class="col-3 productCol">
-          <img src="../../res/img/image.jpg" alt="" />
-          <p>Vestido rosa</p>
-          <p><strong>R$50</strong></p>
+        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
+          <img src="../../res/img/espelho.jpeg" alt="" />
+          <p>Espelho novo</p>
+          <p><strong>R$80</strong></p>
         </div>
-        <div class="col-3 productCol">
-          <img src="../../res/img/image.jpg" alt="" />
-          <p>Vestido rosa</p>
-          <p><strong>R$50</strong></p>
+        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
+          <img src="../../res/img/toalhaMesa.jpg" alt="" />
+          <p>Toalha de mesa praticamente nova</p>
+          <p><strong>R$15</strong></p>
         </div>
-        <div class="col-3 productCol">
-          <img src="../../res/img/image.jpg" alt="" />
-          <p>Vestido rosa</p>
-          <p><strong>R$50</strong></p>
+        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
+          <img src="../../res/img/livros.jpg" alt="" />
+          <p>Coleção livros Percy Jackson</p>
+          <p><strong>R$150</strong></p>
         </div>
       </div>
       <div class="row productRow">
-        <div class="col-3 productCol">
-          <img src="../../res/img/image.jpg" alt="" />
+        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
+          <img src="../../res/img/moto.jpeg" alt="" />
+          <p>Fazer 2011</p>
+          <p><strong>R$7.000</strong></p>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
+          <img src="../../res/img/vestidoRosa.jpg" alt="" />
           <p>Vestido rosa</p>
           <p><strong>R$50</strong></p>
         </div>
-        <div class="col-3 productCol">
-          <img src="../../res/img/image.jpg" alt="" />
-          <p>Vestido rosa</p>
-          <p><strong>R$50</strong></p>
+        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
+          <img src="../../res/img/iPhone.jpg" alt="" />
+          <p>iPhone 8 Plus 128gb</p>
+          <p><strong>R$2.300</strong></p>
         </div>
-        <div class="col-3 productCol">
-          <img src="../../res/img/image.jpg" alt="" />
-          <p>Vestido rosa</p>
-          <p><strong>R$50</strong></p>
-        </div>
-        <div class="col-3 productCol">
-          <img src="../../res/img/image.jpg" alt="" />
-          <p>Vestido rosa</p>
-          <p><strong>R$50</strong></p>
+        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
+          <img src="../../res/img/gabineteMusical.jpg" alt="" />
+          <p>Gabinete musical</p>
+          <p><strong>R$250</strong></p>
         </div>
       </div>
       <article class="row SobreRow">
@@ -200,7 +212,7 @@
         </div>
       </article>
     </main>
-    <footer class="container footerCopyright">
+    <footer class="container-fluid footerCopyright">
       <div class="row">
         <div class="col-12">
           <h3>
