@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: #f7f7f7f8;
+    overflow-x: hidden;
+}
+.headerContainer{
+    margin: 10px;
+}
+.mainContainer{
+    margin: 10px;
+}
+.logo img{
+    width: 100%;
+    max-width: 100px;
+}
+
+.search{
+    text-align: right;
+    padding-top: 20px;
+}
+.searchInput{
+   width: 90%;
+   height: 40px;
+}
+.searchBtn{
+    height: 40px;
+}
+.loginDiv{
+    padding-top: 30px;
+    
+}
+.login{
+    text-decoration: none;
+    color: black;
+}
+.comprasDiv{
+    padding-top: 30px;
+
+}
+.compras{
+    text-decoration: none;
+    color: black;
+}
+.cartDiv{
+    padding-top: 30px;
+}
+.cart{
+    text-decoration: none;
+    color: black;
+}
+
+.menu{
+    min-width: 100%;
+}
+.menu a{
+ color: #dc3545;
+ font-size: 1.6em;
+}
+.menu a:hover{
+    color: #971010;
+}
+.btnAnunciar{
+    
+}
+.carousel-item img{
+    max-height: 400px;
+}
+.recentes{
+    text-align: center;
+}
+.productRow img{
+    width: 100%;
+    margin-top: 20px;
+    min-width: 100%;
+    min-height: 300px;
+    max-height:300px
+}
+.productRow p{
+ text-align: center;
+}
+.productCol p{  
+    color: rgb(51, 45, 71);
+}
+.titulo{
+    text-align: center;
+}
+.contatoCol{
+    text-align: center;
+}
+.contatoCol i{
+    padding: 20px 10px;
+}
+.SobreRow{
+    color: rgb(189, 39, 39);
+}
+.footerCopyright{
+    text-align: center;
+    background-color: #120e27f8;
+    color: white;
+    padding: 10px 0px;
+}
