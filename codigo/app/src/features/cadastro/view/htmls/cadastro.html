@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mercadão</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+          
+            // Function to check Whether both passwords
+            // is same or not.
+            function checkPassword() {
+                var pwd = document.getElementById('pwd').value;
+                log(pwd);
+                var pwd2 = document.getElementById('pwd2').value;
+               
+
+  
+                // If password not entered
+                if (pwd == ''){
+                    alert ("Coloque uma senha");
+                    return false;
+                  }
+                      
+                // If confirm password not entered
+                else if (pwd2 == ''){
+                    alert ("Confirme a senha");
+                    return false;
+                }
+                // If Not same return False.  
+                
+                
+  
+                // If same return True.
+                else{
+                    alert("Cadastro feito.Bem vindo ao Mercadão!")
+                    return true;
+                }
+            }
+        </script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Mercadão PUC</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class=""><a href="#">Cadastro</a></li>
+      <li class=""><a href="../../../login/view/htmls/login.html">Login</a></li>
+      
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+  <h2>Cadastre-se</h2>
+  <form onSubmit = "return checkPassword()">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="nome" class="form-control" id="nome" placeholder="Enter Name" name="nome">
+    </div><br>
+    <div class="form-group">
+  <label for="sel1">Qual unidade você estuda/trabalha?:</label>
+  <select class="form-control" id="sel1">
+    <option>Coração Eucaristico </option>
+    <option>São Gabriel</option>
+    <option>Praça da Liberdade</option>
+    <option>Barreiro</option>
+    <option>Outro</option>
+  </select>
+</div><br>
+    <div class="form-group">
+      <label for="sexo">Sexo:</label>
+      <label class="radio-inline"><input type="radio" name="optradio" checked>Masculino</label>
+<label class="radio-inline"><input type="radio" name="optradio">Feminino</label>
+<label class="radio-inline"><input type="radio" name="optradio">Outro</label>
+      <label class="radio-inline"><input type="radio" name="optradio">Prefiro não dizer</label>
+    </div><br>
+    <div class="form-group">
+      <label for="cel">Numero para contato:</label>
+      <input type="number" class="form-control" id="number" placeholder="Numero" name="number">
+    </div><br>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div><br>
+    <div class="form-group">
+      <label for="email">Confirmação de Email:</label>
+      <input type="email" class="form-control" id="emailConfirmation" placeholder="Confirm email" name="emailConfirmation">
+    </div><br>
+    <div class="form-group">
+      <label for="pwd">Senha:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+    </div><br>
+    <div class="form-group">
+      <label for="pwd">Confirme a Senha:</label>
+      <input type="password" class="form-control" id="pwd2" placeholder="Confirm password" name="pwd2">
+    </div><br>
+    <div class="form-group">
+      <label for="pix">Pix:</label>
+      <input type="email" class="form-control" id="pix" placeholder="Pix" name="pix">
+    </div><br>
+  <div class="form-group">
+    <label for="inputlg">Descrição</label>
+    <input class="form-control input-lg" id="inputlg" type="text">
+  </div>
+    <button type = "submit" class="btn btn-success">Cadastrar</button>
+  </form><br>
+  <div class="container">
+    <h5>Ja possui cadastro?</h5>
+  <a href="../../../login/view/htmls/login.html" data-toggle="tooltip" title="login">Faça login aqui!</a>
+</div>
+
+  
+
+</div>
+
+</body>
+</html>
