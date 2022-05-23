@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #d1e1ebf8;
+  overflow-x: hidden;
+}
+
+.headerContainer {
+  margin: 10px;
+}
+
+.mainContainer {
+  margin: 10px;
+}
+
+.nome {
+  margin-bottom: 40px;
+}
+
+.logo img {
+  width: 100%;
+  max-width: 100px;
+}
+
+.search {
+  text-align: right;
+  padding-top: 20px;
+}
+
+.searchInput {
+  width: 90%;
+  height: 40px;
+}
+
+.searchBtn {
+  height: 40px;
+}
+
+.loginDiv {
+  padding-top: 30px;
+
+}
+
+.login {
+  text-decoration: none;
+  color: black;
+}
+
+.comprasDiv {
+  padding-top: 30px;
+
+}
+
+.compras {
+  text-decoration: none;
+  color: black;
+}
+
+.cartDiv {
+  padding-top: 30px;
+}
+
+.cart {
+  text-decoration: none;
+  color: black;
+}
+
+.menu {
+  min-width: 100%;
+}
+
+.menu a {
+  color: #dc3545;
+  font-size: 1.6em;
+}
+
+.menu a:hover {
+  color: #971010;
+}
+
+.carousel-item img {
+  max-width: 60%;
+  height: auto;
+  max-height: 600px;
+  margin: 0 auto;
+}
+
+.info {
+  padding: 0 0 40px 0;
+}
+
+.categoria {
+  padding-top: 20px;
+}
+
+.chat {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.chatbtn {
+  width: 300px;
+  font-size: 1.8em;
+}
+
+.descricao {
+  border: 1px solid #0d6efd;
+  margin-bottom: 20px;
+}
+
+.buyBtn {
+  margin: 20px 0px;
+}
+
+.footer {
+  background-color: #18191a;
+  color: white;
+  padding: 5px;
+}
