@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="../../../communs/res/img/PUC2.png">
+  <title>Mercadão</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../../home/view/htmls/home.html">Mercadão PUC</a>
+    </div>
+  </div>
+</nav>
+  
+<div class="container">
+  <h2>Cadastrar Produto</h2>
+    <div class="form-group">
+      <label for="nome">Descrição:</label>
+      <input type="descricao" class="form-control" id="desc" placeholder="O que é o seu produto?" name="descricao">
+    </div><br>
+  <div class="form-group">
+      <label for="nome">Preço Desejado:</label>
+      <input type="text" class="form-control" id="preco" placeholder="Qual o preço do seu produto?" name="preco">
+    </div><br>
+  <div class="form-group">
+      <label for="nome">Categorias:</label>
+      <div class="checkbox">
+  <label><input type="checkbox" value="">Roupas</label>
+</div>
+<div class="checkbox">
+  <label><input type="checkbox" value="">Eletronicos</label>
+</div>
+    <div class="checkbox">
+  <label><input type="checkbox" value="">Acessorios</label>
+</div>
+    <div class="checkbox">
+  <label><input type="checkbox" value="">Livros</label>
+</div>
+    <div class="checkbox">
+  <label><input type="checkbox" value="">Esportes</label>
+</div>
+<div class="checkbox">
+    <label><input type="checkbox" value="">Serviços</label>
+  </div>
+    <div class="checkbox">
+  <label><input type="checkbox" value="">Outros</label>
+</div>
+    </div><br>
+    <div class="form-group">
+  <label for="campus">Qual unidade você deseja entregar o produto?:</label>
+  <select class="form-control" id="campui">
+    <option>Coração Eucaristico </option>
+    <option>São Gabriel</option>
+    <option>Praça da Liberdade</option>
+    <option>Barreiro</option>
+    <option>Outro</option>
+  </select>
+</div><br>
+    <div class="form-group">
+      <label for="sexo">Estado do produto:</label>
+      <label class="radio-inline"><input type="radio" name="optradio" checked>Novo</label>
+<label class="radio-inline"><input type="radio" name="optradio">Semi novo</label>
+<label class="radio-inline"><input type="radio" name="optradio">Usado</label>
+    </div><br>
+   
+     <div class="form-group">
+      <label for="marca">Marca:</label>
+      <input type="marca" class="form-control" id="desc" placeholder="O produto possui marca?" name="marca">
+    </div><br>
+   
+    
+   
+   <div class="form-group">
+  <label for="sel1">Quantidade do produto:</label>
+  <select class="form-control" id="sel1">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+   <option>5 ou mais</option>
+  </select>
+</div>
+   <div class="form-group">
+ <label for="files">Adicionar foto:</label>  
+<div style="width:100px;height:100px;border:dashed 1px #ccc;" id="view_photo"><img id='output' style="height:10px, width = 100px"></div>
+<input type="file" name="files" />
+</div><br>
+<!--[Script]-->
+<script>
+var files = document.querySelector('input[name="files"]');
+
+files.addEventListener("change", function(file){
+	var input = file.target;
+	
+	var reader = new FileReader();
+    
+	reader.onload = function(){
+      var dataURL = reader.result;
+      var output = document.getElementById('output');
+      output.src = dataURL;
+    };
+
+    reader.readAsDataURL(input.files[0]);
+});
+</script>
+  
+    <button type="button" class="btn btn-success">Cadastrar Produto</button>
+  </form><br>
+ 
+  
+
+</div>
+
+</body>
+</html>
