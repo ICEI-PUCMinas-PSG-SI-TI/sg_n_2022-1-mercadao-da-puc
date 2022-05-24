@@ -30,19 +30,20 @@ function Usuario(nomeCadastro,senhaCadastro,emailCadastro,pixCadastro,descricaoC
 function loginUsuario(emailL, senhaL){
 
     if(localStorage.getItem('usuarios') == null){
-        alert('Usuário nao registrado ')
+        alert('Nao existem usuarios  registrado ')
     }else{
         var usuarios = JSON.parse(localStorage.getItem('usuarios'))
-        usuarios.forEach(user => {
+        const usuariosAtualizados = usuarios.map(user => {
             if(user.email == emailL && user.senha == senhaL){
-                //alert(`Usuario registrado ${user.nome}`) 
-    
-                usuarios.map(user => new Usuario(user.nome,user.senha,user.email,user.pix,user.descricao,user.number, true) )
+                user.logado = true 
                 window.location.replace('../../../home/view/htmls/home.html')
             }else{
-                //alert('Email ou senha incorretos')
+                alert('Email ou senha incorretos')
                 user.logado = false;
             }
+            return user
         });
+
+        localStorage.setItem('usuarios',JSON.stringify(usuariosAtualizados));
     }
 }

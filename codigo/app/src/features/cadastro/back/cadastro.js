@@ -51,14 +51,14 @@ function checkNome(nome1) {
     }
 
 }
-function Usuario(nomeCadastro,senhaCadastro,emailCadastro,pixCadastro,descricaoCadastro,numeroCadastro){
+function Usuario(nomeCadastro,senhaCadastro,emailCadastro,pixCadastro,descricaoCadastro,numeroCadastro, logadoCadastro = false){
     this.nome = nomeCadastro;
     this.senha = senhaCadastro;
     this.email = emailCadastro;
     this.pix = () => (pixCadastro == '') ? 'pix nao foi informado':pixCadastro
     this.descricao = descricaoCadastro;
     this.number = numeroCadastro;
-    this.logado = false;
+    this.logado = logadoCadastro;
 }
 
   /**

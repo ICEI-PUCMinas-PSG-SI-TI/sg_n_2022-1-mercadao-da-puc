@@ -10,13 +10,10 @@ function verificarLogado(){
             console.log(user.logado)
             if(user.logado == true) {
                 labelCadastre.style.display = "none"
-                labelNomeLogado.value = user.nome
+                labelNomeLogado.innerHTML = user.nome
                 console.log(user.nome)
             }
 
         })
     }
 }
-
-//historico.style.display="none";
-//  historico.style.display="block";  
