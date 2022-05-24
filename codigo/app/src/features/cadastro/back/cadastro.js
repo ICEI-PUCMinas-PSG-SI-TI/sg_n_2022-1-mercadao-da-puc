@@ -37,7 +37,7 @@ function cliqueCadastro(){
         salvar(usuario)
 
         alert('Criando conta com sucesso')
-        //window.location.replace('../../../login/view/htmls/login.html')
+        window.location.replace('../../../login/view/htmls/login.html')
     }
    
 }
@@ -58,6 +58,7 @@ function Usuario(nomeCadastro,senhaCadastro,emailCadastro,pixCadastro,descricaoC
     this.pix = () => (pixCadastro == '') ? 'pix nao foi informado':pixCadastro
     this.descricao = descricaoCadastro;
     this.number = numeroCadastro;
+    this.logado = false;
 }
 
   /**
@@ -72,7 +73,7 @@ function salvar(usuario) {
     }
     usuarios = JSON.parse(localStorage.getItem('usuarios'))
     let usuarioAtual = {nome:usuario.nome, senha:usuario.senha, email: usuario.email, pix:usuario.pix()
-        ,descricao: usuario.descricao, number:usuario.number }
+        ,descricao: usuario.descricao, number:usuario.number,logado:usuario.logado }
     //console.log(`usuario ${usuarioAtual.senha}`)
     usuarios.push(usuarioAtual)
     localStorage.setItem('usuarios',JSON.stringify(usuarios));
