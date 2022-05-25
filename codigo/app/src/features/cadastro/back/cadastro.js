@@ -1,6 +1,5 @@
 let inputNome = document.getElementById("nome");
-//let selectedUnidade = document.getElementById("sel1");
-//Pesquisar como capturar um radio button
+let selectedUnidade = document.getElementById("sel1");
 let inputNumber = document.getElementById("number");
 let inputEmail = document.getElementById("email");
 let inputEmailConfirmation = document.getElementById("emailConfirmation");
@@ -9,6 +8,7 @@ let inputSenhaConfirmation = document.getElementById("senha2");
 let inputPix = document.getElementById("pix");
 let inputDescripition = document.getElementById("descricao");
 let botaoSumbmit = document.getElementById("botao");
+
 
 
 //preciso saber oque esta dando errado antes de tirar
@@ -30,10 +30,12 @@ function cliqueCadastro(){
     var senhaConfirmation = inputSenhaConfirmation.value;
     var pix = inputPix.value;
     var description = inputDescripition.value;
+    var unidadePuc = selectedUnidade.options[selectedUnidade.selectedIndex].text
+    var radioGenero = checkRadioGroupGenero();
     if(checkNome(nome) && checkNumber(number) && checkEmail(email,emailConfirmation) 
-    && checkSenha(senha,senhaConfirmation) && checkDescription(description)) {
+    && checkSenha(senha,senhaConfirmation) && checkDescription(description) ) {
         //Criar conta é permitido
-        let usuario = new Usuario(nome,senha,email,pix,description,number)
+        let usuario = new Usuario(nome,senha,email,pix,description,number,unidadePuc,radioGenero)
         salvar(usuario)
 
         alert('Criando conta com sucesso')
@@ -51,7 +53,19 @@ function checkNome(nome1) {
     }
 
 }
-function Usuario(nomeCadastro,senhaCadastro,emailCadastro,pixCadastro,descricaoCadastro,numeroCadastro, logadoCadastro = false){
+function checkRadioGroupGenero(){
+    if (document.getElementById('r1').checked) {
+        return document.getElementById('r1').value;
+    }else if (document.getElementById('r2').checked) {
+        return document.getElementById('r2').value;
+    }else if (document.getElementById('r3').checked) {
+        return document.getElementById('r3').value;
+    }else if (document.getElementById('r4').checked) {
+        return document.getElementById('r4').value;
+    }
+}
+function Usuario(nomeCadastro,senhaCadastro,emailCadastro,pixCadastro,descricaoCadastro,
+    numeroCadastro,unidadePuc,generoCadastro,logadoCadastro = false){
     this.nome = nomeCadastro;
     this.senha = senhaCadastro;
     this.email = emailCadastro;
@@ -59,6 +73,8 @@ function Usuario(nomeCadastro,senhaCadastro,emailCadastro,pixCadastro,descricaoC
     this.descricao = descricaoCadastro;
     this.number = numeroCadastro;
     this.logado = logadoCadastro;
+    this.unidade = unidadePuc;
+    this.genero = generoCadastro;
 }
 
   /**
@@ -73,7 +89,7 @@ function salvar(usuario) {
     }
     usuarios = JSON.parse(localStorage.getItem('usuarios'))
     let usuarioAtual = {nome:usuario.nome, senha:usuario.senha, email: usuario.email, pix:usuario.pix()
-        ,descricao: usuario.descricao, number:usuario.number,logado:usuario.logado }
+        ,descricao: usuario.descricao, number:usuario.number,unidade:usuario.unidade,logado:usuario.logado,genero:usuario.genero}
     //console.log(`usuario ${usuarioAtual.senha}`)
     usuarios.push(usuarioAtual)
     localStorage.setItem('usuarios',JSON.stringify(usuarios));
@@ -82,6 +98,7 @@ function salvar(usuario) {
 
 
 function checkSenha(senha1,senha2){
+
     if(senha1 == ''){
         alert ("Coloque uma senha");
         return false
@@ -91,7 +108,10 @@ function checkSenha(senha1,senha2){
     }else if (!(senha1 == senha2)){
         alert ("As senhas informadas nao correspomdem");
         return false
-    }else{
+    }else if(senha1.length < 8){
+        alert('Senha muita Fraca, Porfavor digite mais de 8 digitos')
+    }
+    else{
         return true
     }
 
