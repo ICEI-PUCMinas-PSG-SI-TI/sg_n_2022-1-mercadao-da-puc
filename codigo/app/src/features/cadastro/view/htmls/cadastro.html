@@ -8,39 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script>
-          
-            // Function to check Whether both passwords
-            // is same or not.
-            function checkPassword() {
-                var pwd = document.getElementById('pwd').value;
-                log(pwd);
-                var pwd2 = document.getElementById('pwd2').value;
-               
-
   
-                // If password not entered
-                if (pwd == ''){
-                    alert ("Coloque uma senha");
-                    return false;
-                  }
-                      
-                // If confirm password not entered
-                else if (pwd2 == ''){
-                    alert ("Confirme a senha");
-                    return false;
-                }
-                // If Not same return False.  
-                
-                
-  
-                // If same return True.
-                else{
-                    alert("Cadastro feito.Bem vindo ao Mercadão!")
-                    return true;
-                }
-            }
-        </script>
 </head>
 <body>
 
@@ -67,23 +35,23 @@
     <div class="form-group">
   <label for="sel1">Qual unidade você estuda/trabalha?:</label>
   <select class="form-control" id="sel1">
-    <option>Coração Eucaristico </option>
-    <option>São Gabriel</option>
-    <option>Praça da Liberdade</option>
-    <option>Barreiro</option>
-    <option>Outro</option>
+    <option value="1">Coração Eucaristico </option>
+    <option value="2">São Gabriel</option>
+    <option value="3">Praça da Liberdade</option>
+    <option value="4">Barreiro</option>
+    <option value="5">Outro</option>
   </select>
 </div><br>
     <div class="form-group">
       <label for="sexo">Sexo:</label>
-      <label class="radio-inline"><input type="radio" name="optradio" checked>Masculino</label>
-<label class="radio-inline"><input type="radio" name="optradio">Feminino</label>
-<label class="radio-inline"><input type="radio" name="optradio">Outro</label>
-      <label class="radio-inline"><input type="radio" name="optradio">Prefiro não dizer</label>
+      <label class="radio-inline"><input type="radio" id = "r1" name="optradio" value="Masculino" checked>Masculino</label>
+<label class="radio-inline"><input type="radio" id = "r2" name="optradio" value="Feminino">Feminino</label>
+<label class="radio-inline"><input type="radio" id = "r3" name="optradio" value="Outro">Outro</label>
+      <label class="radio-inline"><input type="radio" id = "r4" name="optradio" value="Prefiro não dizer">Prefiro não dizer</label>
     </div><br>
     <div class="form-group">
       <label for="cel">Numero para contato:</label>
-      <input type="number" class="form-control" id="number" placeholder="Numero" name="number">
+      <input type="text" class="form-control" id="number" placeholder="Numero" name="number">
     </div><br>
     <div class="form-group">
       <label for="email">Email:</label>
@@ -95,11 +63,11 @@
     </div><br>
     <div class="form-group">
       <label for="pwd">Senha:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+      <input type="password" class="form-control" id="senha1" placeholder="Enter password" name="pwd">
     </div><br>
     <div class="form-group">
       <label for="pwd">Confirme a Senha:</label>
-      <input type="password" class="form-control" id="pwd2" placeholder="Confirm password" name="pwd2">
+      <input type="password" class="form-control" id="senha2" placeholder="Confirm password" name="pwd2">
     </div><br>
     <div class="form-group">
       <label for="pix">Pix:</label>
@@ -107,9 +75,9 @@
     </div><br>
   <div class="form-group">
     <label for="inputlg">Descrição</label>
-    <input class="form-control input-lg" id="inputlg" type="text">
+    <input class="form-control input-lg" id="descricao" type="text">
   </div>
-    <button type = "submit" class="btn btn-success">Cadastrar</button>
+    <button type = "submit" class="btn btn-success" id="botao" onclick="cliqueCadastro();">Cadastrar</button>
   </form><br>
   <div class="container">
     <h5>Ja possui cadastro?</h5>
@@ -121,4 +89,5 @@
 </div>
 
 </body>
+<script src="../../back/cadastro.js"></script>
 </html>
