@@ -75,6 +75,8 @@ function Usuario(nomeCadastro,senhaCadastro,emailCadastro,pixCadastro,descricaoC
     this.logado = logadoCadastro;
     this.unidade = unidadePuc;
     this.genero = generoCadastro;
+    this.produtos = [];
+    this.produtosFavoritos = [];
 }
 
   /**
