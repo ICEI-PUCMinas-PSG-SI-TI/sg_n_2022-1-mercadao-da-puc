@@ -91,7 +91,7 @@ function salvar(usuario) {
     }
     usuarios = JSON.parse(localStorage.getItem('usuarios'))
     let usuarioAtual = {nome:usuario.nome, senha:usuario.senha, email: usuario.email, pix:usuario.pix()
-        ,descricao: usuario.descricao, number:usuario.number,unidade:usuario.unidade,logado:usuario.logado,genero:usuario.genero}
+        ,descricao: usuario.descricao, number:usuario.number,unidade:usuario.unidade,logado:usuario.logado,genero:usuario.genero, produtos: usuario.produtos, produtosFavoritos: usuario.produtosFavoritos}
     //console.log(`usuario ${usuarioAtual.senha}`)
     usuarios.push(usuarioAtual)
     localStorage.setItem('usuarios',JSON.stringify(usuarios));
