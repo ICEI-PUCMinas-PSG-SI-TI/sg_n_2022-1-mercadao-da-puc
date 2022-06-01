@@ -1,12 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+  <link rel="icon" type="image/x-icon" href="../../../../communs/res/img/PUC2.png">
+  <title>Mercadão PUC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
 </head>
 <body>
-    
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../../../home/view/htmls/home.html">Mercadão PUC</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class=""><a href="#">Cadastro</a></li>
+      <li class=""><a href="../../../login/view/htmls/login.html">Login</a></li>
+      
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+  <h2>Cadastre-se</h2>
+  <form onSubmit = "return checkPassword()">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="nome" class="form-control" id="nome" placeholder="Enter Name" name="nome">
+    </div><br>
+    <div class="form-group">
+  <label for="sel1">Qual unidade você estuda/trabalha?:</label>
+  <select class="form-control" id="sel1">
+    <option value="1">Coração Eucaristico </option>
+    <option value="2">São Gabriel</option>
+    <option value="3">Praça da Liberdade</option>
+    <option value="4">Barreiro</option>
+    <option value="5">Outro</option>
+  </select>
+</div><br>
+    <div class="form-group">
+      <label for="sexo">Sexo:</label>
+      <label class="radio-inline"><input type="radio" id = "r1" name="optradio" value="Masculino" checked>Masculino</label>
+<label class="radio-inline"><input type="radio" id = "r2" name="optradio" value="Feminino">Feminino</label>
+<label class="radio-inline"><input type="radio" id = "r3" name="optradio" value="Outro">Outro</label>
+      <label class="radio-inline"><input type="radio" id = "r4" name="optradio" value="Prefiro não dizer">Prefiro não dizer</label>
+    </div><br>
+    <div class="form-group">
+      <label for="cel">Numero para contato:</label>
+      <input type="text" class="form-control" id="number" placeholder="Numero" name="number">
+    </div><br>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div><br>
+    <div class="form-group">
+      <label for="email">Confirmação de Email:</label>
+      <input type="email" class="form-control" id="emailConfirmation" placeholder="Confirm email" name="emailConfirmation">
+    </div><br>
+    <div class="form-group">
+      <label for="pwd">Senha:</label>
+      <input type="password" class="form-control" id="senha1" placeholder="Enter password" name="pwd">
+    </div><br>
+    <div class="form-group">
+      <label for="pwd">Confirme a Senha:</label>
+      <input type="password" class="form-control" id="senha2" placeholder="Confirm password" name="pwd2">
+    </div><br>
+    <div class="form-group">
+      <label for="pix">Pix:</label>
+      <input type="email" class="form-control" id="pix" placeholder="Pix" name="pix">
+    </div><br>
+  <div class="form-group">
+    <label for="inputlg">Descrição</label>
+    <input class="form-control input-lg" id="descricao" type="text">
+  </div>
+    <button type = "submit" class="btn btn-success" id="botao" onclick="cliqueCadastro();">Cadastrar</button>
+  </form><br>
+  <div class="container">
+    <h5>Ja possui cadastro?</h5>
+  <a href="../../../login/view/htmls/login.html" data-toggle="tooltip" title="login">Faça login aqui!</a>
+</div>
+
+  
+
+</div>
+
 </body>
+<script src="../../back/cadastro.js"></script>
 </html>
