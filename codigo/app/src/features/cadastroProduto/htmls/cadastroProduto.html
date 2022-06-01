@@ -22,9 +22,10 @@
   
 <div class="container">
   <h2>Cadastrar Produto</h2>
+  <form id="formDescricao" method="post" >
     <div class="form-group">
       <label for="nome">Descrição:</label>
-      <input type="descricao" class="form-control" id="desc" placeholder="O que é o seu produto?" name="descricao">
+      <input type="descricao" class="form-control" id="descricao" placeholder="O que é o seu produto?" name="descricao">
     </div><br>
   <div class="form-group">
       <label for="nome">Preço Desejado:</label>
@@ -32,60 +33,60 @@
     </div><br>
   <div class="form-group">
       <label for="nome">Categorias:</label>
-      <div class="checkbox">
-  <label><input type="checkbox" value="">Roupas</label>
+      <div class="radio">
+  <label><input type="radio" value="Roupas" name="optCheck">Roupas</label>
 </div>
-<div class="checkbox">
-  <label><input type="checkbox" value="">Eletronicos</label>
+<div class="radio">
+  <label><input type="radio" value="Eletronicos" name="optCheck">Eletronicos</label>
 </div>
-    <div class="checkbox">
-  <label><input type="checkbox" value="">Acessorios</label>
+    <div class="radio">
+  <label><input type="radio" value="Acessorios" name="optCheck">Acessorios</label>
 </div>
-    <div class="checkbox">
-  <label><input type="checkbox" value="">Livros</label>
+    <div class="radio">
+  <label><input type="radio" value="Livros" name="optCheck">Livros</label>
 </div>
-    <div class="checkbox">
-  <label><input type="checkbox" value="">Esportes</label>
+    <div class="radio">
+  <label><input type="radio" value="Esportes" name="optCheck">Esportes</label>
 </div>
-<div class="checkbox">
-    <label><input type="checkbox" value="">Serviços</label>
+<div class="radio">
+    <label><input type="radio" value="Serviços" name="optCheck">Serviços</label>
   </div>
-    <div class="checkbox">
-  <label><input type="checkbox" value="">Outros</label>
+    <div class="radio">
+  <label><input type="radio" value="Outros" name="optCheck">Outros</label>
 </div>
     </div><br>
     <div class="form-group">
   <label for="campus">Qual unidade você deseja entregar o produto?:</label>
-  <select class="form-control" id="campui">
-    <option>Coração Eucaristico </option>
-    <option>São Gabriel</option>
-    <option>Praça da Liberdade</option>
-    <option>Barreiro</option>
-    <option>Outro</option>
+  <select class="form-control" id="campui" onchange="atualizouUnidade()">
+    <option value="Coração Eucaristico" selected>Coração Eucaristico </option>
+    <option value="São Gabriel" >São Gabriel</option>
+    <option value="Praça da Liberdade" >Praça da Liberdade</option>
+    <option value="Barreiro" >Barreiro</option>
+    <option value="Outro" >Outro</option>
   </select>
 </div><br>
     <div class="form-group">
-      <label for="sexo">Estado do produto:</label>
-      <label class="radio-inline"><input type="radio" name="optradio" checked>Novo</label>
-<label class="radio-inline"><input type="radio" name="optradio">Semi novo</label>
-<label class="radio-inline"><input type="radio" name="optradio">Usado</label>
+      <label>Estado do produto:</label>
+      <label class="radio-inline"><input type="radio" name="optradio" value="Novo" checked>Novo</label>
+      <label class="radio-inline"><input type="radio" name="optradio" value="Semi novo">Semi novo</label>
+      <label class="radio-inline"><input type="radio" name="optradio" value="Usado">Usado</label>
     </div><br>
    
      <div class="form-group">
       <label for="marca">Marca:</label>
-      <input type="marca" class="form-control" id="desc" placeholder="O produto possui marca?" name="marca">
+      <input type="marca" class="form-control" id="marca" placeholder="O produto possui marca?" name="marca">
     </div><br>
    
     
    
    <div class="form-group">
   <label for="sel1">Quantidade do produto:</label>
-  <select class="form-control" id="sel1">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-   <option>5 ou mais</option>
+  <select class="form-control" id="sel1" onchange="atualizouQuantidade()">
+    <option value="1" selected>1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+   <option value="5">5</option>
   </select>
 </div>
    <div class="form-group">
@@ -93,31 +94,15 @@
 <div style="width:100px;height:100px;border:dashed 1px #ccc;" id="view_photo"><img id='output' style="height:10px, width = 100px"></div>
 <input type="file" name="files" />
 </div><br>
-<!--[Script]-->
-<script>
-var files = document.querySelector('input[name="files"]');
 
-files.addEventListener("change", function(file){
-	var input = file.target;
-	
-	var reader = new FileReader();
-    
-	reader.onload = function(){
-      var dataURL = reader.result;
-      var output = document.getElementById('output');
-      output.src = dataURL;
-    };
-
-    reader.readAsDataURL(input.files[0]);
-});
-</script>
-  
-    <button type="button" class="btn btn-success">Cadastrar Produto</button>
-  </form><br>
+<button type="button" class="btn btn-success" id="btnAdd">Cadastrar Produto</button>
+<button type="button" class="btn btn-success" id="btnClean" onclick="clean()">Limpar</button>
+<br>
  
   
 
 </div>
 
+<script src="../back/cadastroProduto.js"></script>
 </body>
 </html>
