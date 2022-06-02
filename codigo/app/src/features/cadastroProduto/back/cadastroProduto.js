@@ -29,23 +29,23 @@ var files = document.querySelector('input[name="files"]');
   let salvar1 = document.getElementById("btnAdd");
 
   salvar1.addEventListener("click", function() {
+    let produto = {
+      descricao: document.getElementById('descricao').value,
+      preco: document.getElementById('preco').value,
+      categoria: document.querySelector('input[name="optCheck"]:checked').value,
+      localEntrega: atualizouUnidade(),
+      estadoDoProduto:  document.querySelector('input[name="optradio"]:checked').value,
+      marca: document.getElementById('marca').value,
+      quantidadeDoProduto: atualizouQuantidade(),
+    }
     if(localStorage.getItem('usuarios') == null){
-        window.location.replace('../../../login/view/htmls/login.html')
+        window.location.replace('../../login/view/htmls/login.html')
         alert('Usuário nao registrado ')
     }else{
         var usuarios = JSON.parse(localStorage.getItem('usuarios'))
         usuarios.forEach(user => {
             if(user.logado == true) {
-              let produto = {
-                descricao: document.getElementById('descricao').value,
-                preco: document.getElementById('preco').value,
-                categoria: document.querySelector('input[name="optCheck"]:checked').value,
-                localEntrega: atualizouUnidade(),
-                estadoDoProduto:  document.querySelector('input[name="optradio"]:checked').value,
-                marca: document.getElementById('marca').value,
-                quantidadeDoProduto: atualizouQuantidade(),
-              }
-
+              console.log(user);
               user.produtos.push(produto)
     
               // if (localStorage.getItem('produtos') == null) {
@@ -63,13 +63,8 @@ var files = document.querySelector('input[name="files"]');
               //   // console.log(caixaProdutos);
               // }
             }
-            break;
           })
           localStorage.setItem('usuarios', JSON.stringify(usuarios))
-          window.location.replace('../../../home/view/htmls/home.html')
+          window.location.replace('../../home/view/htmls/home.html')
     }
   });
-  
-  function clean() {
-    localStorage.clear();
-  }
