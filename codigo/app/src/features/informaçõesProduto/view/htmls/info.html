@@ -89,7 +89,7 @@
       </header>
       <main class="container">
         <div class="row">
-          <h1 class="nome col-12 text-center">NOME DO PRODUTO</h1>
+          <h1 id="nomeProduto" class="nome col-12 text-center">NOME DO PRODUTO</h1>
         </div>
         <div class="row">
           <div id="carouselExampleIndicators" class="carousel slide col-lg-9" data-bs-ride="carousel">
@@ -120,13 +120,13 @@
           </div>
           <div class="col-lg-3">
             <h2>Preço:</h2>
-            <h3 class="info">67R$</h3>
+            <h3 id="precoProduto" class="info">67R$</h3>
             <h2>Unidade:</h2>
-            <h3 class="info">São Gabriel</h3>
+            <h3 id="entregaProduto" class="info">São Gabriel</h3>
             <h2>Estado de uso:</h2>
-            <h3 class="info">Novo</h3>
+            <h3 id="estadoProduto" class="info">Novo</h3>
             <h2>Categoria:</h2>
-            <h3 class="info">Roupas</h3>
+            <h3 id="categoriaProduto" class="info">Roupas</h3>
           </div>
         </div>
         <div class="row">
@@ -151,7 +151,7 @@
         <div class="row">
           <div class="col-12 text-center">
             <button class="buyBtn btn btn-warning">COMPRAR <i class="fa-solid fa-cart-shopping"></i></button>
-            <span>X restantes</span>
+            <span id="quatidadeProduto">X restantes</span>
           </div>
         </div>
       </main>
@@ -161,6 +161,7 @@
          <h2 class="col text-center">PUC MINAS TODOS OS DIREITOS RESERVADOS - TERMOS DE USO</h2>
        </div>
       </footer>
+      <script src="../infoProduto.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
