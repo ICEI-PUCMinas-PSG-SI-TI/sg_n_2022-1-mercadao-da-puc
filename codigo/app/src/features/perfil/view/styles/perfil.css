@@ -1,0 +1,64 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background-color: #f7f7f7f8;
+  overflow-x: hidden;
+}
+.headerContainer{
+  margin: 10px;
+}
+.mainContainer{
+  margin: 10px;
+}
+.logo img{
+  width: 100%;
+  max-width: 100px;
+}
+
+.search{
+  text-align: right;
+  padding-top: 20px;
+}
+.searchInput{
+ width: 90%;
+ height: 40px;
+}
+.searchBtn{
+  height: 40px;
+}
+.loginDiv{
+  padding-top: 30px;
+  
+}
+.login{
+  text-decoration: none;
+  color: black;
+}
+.comprasDiv{ /* favoritos div */
+  padding-top: 30px;
+
+}
+.compras{ /* favoritos */
+  text-decoration: none;
+  color: black;
+}
+.cartDiv{
+  padding-top: 30px;
+}
+.cart{
+  text-decoration: none;
+  color: black;
+}
+
+.menu{
+  min-width: 100%;
+}
+.menu a{
+color: #dc3545;
+font-size: 1.6em;
+}
+.menu a:hover{
+  color: #971010;
+}

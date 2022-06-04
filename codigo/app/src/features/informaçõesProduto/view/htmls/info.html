@@ -27,7 +27,7 @@
     <header class="container-fluid headerContainer">
       <div class="row">
         <div class="col-lg-1 col-md-2 logo">
-           <img src="../../../../communs/res/img/PUC2.png" alt="LOGO" />
+           <a href="../../../home/view/htmls/home.html"><img src="../../../../communs/res/img/PUC2.png" alt="LOGO" /></a>
         </div>
         <form action="" class="col-lg-8 col-md-10 search">
           <input
@@ -77,7 +77,7 @@
                 <a class="nav-link" href="#">Aulas particulares</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btnAnunciar" href="#"
+                <a class="nav-link btnAnunciar" href="../../../cadastroProduto/htmls/cadastroProduto.html"
                   ><button type="button" class="btn btn-outline-danger btn-lg">
                     <i class="fa-solid fa-camera-retro"></i> Anunciar
                 </button></a
@@ -130,7 +130,9 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12 chat text-center"><button  class="chatbtn btn btn-primary"> <span>Chat </span><i class="fa-regular fa-handshake"></i></button></div>
+          <div class="col-12 favoritos text-center" id="favoritos">
+           <span class="adicionar" id="addFav">Adicionar aos Favoritos</span>  <i id="heartFav"class="fa-regular fa-heart heart"></i> 
+          </div>
           <div class="row">
             <div class="col-12 descricao">
               <h3 class="text-center">Descrição</h3>
@@ -150,8 +152,7 @@
         </div>
         <div class="row">
           <div class="col-12 text-center">
-            <button class="buyBtn btn btn-warning">COMPRAR <i class="fa-solid fa-cart-shopping"></i></button>
-            <span>X restantes</span>
+            <div class="col-12 chat text-center"><button  class="chatbtn btn btn-primary"> <span>Chat </span><i class="fa-regular fa-handshake"></i></button></div>
           </div>
         </div>
       </main>
@@ -161,6 +162,7 @@
          <h2 class="col text-center">PUC MINAS TODOS OS DIREITOS RESERVADOS - TERMOS DE USO</h2>
        </div>
       </footer>
+      <script type="text/javascript" src="../jsview/info.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
