@@ -17,3 +17,14 @@ function verificarLogado(){
         })
     }
 }
+
+window.addEventListener("load", function(event) {
+    var usuarios = JSON.parse(localStorage.getItem('usuarios'))
+    usuarios.forEach(user => {
+        user.produtos.forEach(produto => {
+            let telaProduto = document.getElementById('caixaProdutos1')
+            telaProduto.innerHTML +=  `<div class="col-lg-3 col-md-6 col-sm-12 productCol"> <img src="../../res/img/notebook.jpeg" alt="" /> <p>${produto.descricao}</p> <p><strong>R$${produto.preco}</strong></p></div>`
+        })
+        
+    })
+  });
