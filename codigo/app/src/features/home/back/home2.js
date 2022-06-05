@@ -8,12 +8,10 @@ function verificarLogado() {
   } else {
     var usuarios = JSON.parse(localStorage.getItem('usuarios'))
     usuarios.forEach(user => {
-      console.log(user.logado)
       if (user.logado == true) {
         isLogado = true
         labelCadastre.style.display = 'none'
         labelNomeLogado.innerHTML = user.nome
-        console.log(user.nome)
       }
     })
   }
@@ -34,7 +32,7 @@ window.addEventListener('load', function (event) {
     user.produtos.forEach(produto => {
       // var divNova = document.createElement(`caixaProduto${cont}`)
       let telaProduto = document.getElementById('caixaProdutos1')
-      telaProduto.innerHTML += `<div onclick="cliqueProduto(${produto.id})" class="col-lg-3 col-md-6 col-sm-12 productCol" id="${produto.id}"> <img src="../../res/img/notebook.jpeg" alt="" /> <p>${produto.descricao}</p> <p><strong>R$${produto.preco}</strong></p></div>`
+      telaProduto.innerHTML += `<div onclick="cliqueProduto(${produto.id})" class="col-lg-3 col-md-6 col-sm-12 productCol" id="${produto.id}"> <img src="../../res/img/notebook.jpeg" alt="" /> <p>${produto.nome}</p> <p><strong>R$${produto.preco}</strong></p></div>`
     })
   })
 })

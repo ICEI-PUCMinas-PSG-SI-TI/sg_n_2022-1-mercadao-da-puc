@@ -37,6 +37,7 @@ salvar1.addEventListener('click', function () {
     })
   })
   let produto = {
+    nome: document.getElementById('nome').value,
     descricao: document.getElementById('descricao').value,
     preco: document.getElementById('preco').value,
     categoria: document.querySelector('input[name="optCheck"]:checked').value,
