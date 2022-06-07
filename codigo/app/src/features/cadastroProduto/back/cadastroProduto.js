@@ -1,3 +1,68 @@
+function checkNomeProduto(nome) {
+  if(nome.value == ''){
+      alert("Voce deve informar o nome do produto")
+      return false
+  }else{
+      return true
+  }
+}
+
+function checkDescricaoProduto(descricao) {
+  if(descricao.value == ''){
+      alert('Voce deve informar a descrição do produto')
+      return false
+  }else{
+      return true
+  }
+}
+
+function checkPrecoProduto(preco) {
+  if(preco.value == ''){
+      alert('Voce deve informar o preço do produto')
+      return false
+  }else{
+      return true
+  }
+}
+
+function checkMarcaProduto(marca) {
+  if(marca.value == ''){
+    alert('Voce deve informar a marca do produto')
+    return false
+}else{
+    return true
+}
+}
+
+function checkCategoriaProduto(){
+  if (document.getElementById('c1').checked) {
+      return document.getElementById('c1').value;
+  }else if (document.getElementById('c2').checked) {
+      return document.getElementById('c2').value;
+  }else if (document.getElementById('c3').checked) {
+      return document.getElementById('c3').value;
+  }else if (document.getElementById('c4').checked) {
+      return document.getElementById('c4').value;
+  }else if (document.getElementById('c5').checked) {
+    return document.getElementById('c5').value;
+}else if (document.getElementById('c6').checked) {
+    return document.getElementById('c6').value;
+}else if (document.getElementById('c7').checked) {
+    return document.getElementById('c7').value;
+}
+}
+
+function checkEstadoProduto(){
+  if (document.getElementById('e1').checked) {
+      return document.getElementById('e1').value;
+  }else if (document.getElementById('e2').checked) {
+      return document.getElementById('e2').value;
+  }else if (document.getElementById('e3').checked) {
+      return document.getElementById('e3').value;
+  }
+}
+
+
 var files = document.querySelector('input[name="files"]')
 
 files.addEventListener('change', function (file) {
@@ -40,10 +105,9 @@ salvar1.addEventListener('click', function () {
     nome: document.getElementById('nome').value,
     descricao: document.getElementById('descricao').value,
     preco: document.getElementById('preco').value,
-    categoria: document.querySelector('input[name="optCheck"]:checked').value,
+    categoria: checkCategoriaProduto(),
     localEntrega: atualizouUnidade(),
-    estadoDoProduto: document.querySelector('input[name="optradio"]:checked')
-      .value,
+    estadoDoProduto: checkEstadoProduto(),
     marca: document.getElementById('marca').value,
     quantidadeDoProduto: atualizouQuantidade(),
     id: cont
@@ -52,29 +116,18 @@ salvar1.addEventListener('click', function () {
     window.location.replace('../../login/view/htmls/login.html')
     alert('Usuário nao registrado ')
   } else {
-    var usuarios = JSON.parse(localStorage.getItem('usuarios'))
-    usuarios.forEach(user => {
-      if (user.logado == true) {
-        console.log(user)
-        user.produtos.push(produto)
+    if(checkNomeProduto(nome) && checkDescricaoProduto(descricao) && checkPrecoProduto(preco) 
+    &&  atualizouUnidade() != '' && checkMarcaProduto(marca) && atualizouQuantidade() != '') {
 
-        // if (localStorage.getItem('produtos') == null) {
-        //   localStorage.setItem('produtos', []);
-        //   var caixaProdutos = [];
-        //   caixaProdutos[caixaProdutos.length] = produto;
-        //   console.log(JSON.stringify(caixaProdutos));
-        //   localStorage.setItem('produtos', JSON.stringify(caixaProdutos));
-        // }else {
-        //   var caixaProdutos = JSON.parse(localStorage.getItem('produtos'));
-        //   caixaProdutos[caixaProdutos.length] = produto;
-        //   localStorage.setItem('produtos', JSON.stringify(caixaProdutos));
-        //   // console.log(localStorage.getItem('produtos').produtos);
-        //   // let caixaProdutos = JSON.parse(localStorage.getItem('produtos'));
-        //   // console.log(caixaProdutos);
-        // }
-      }
-    })
-    localStorage.setItem('usuarios', JSON.stringify(usuarios))
-    window.location.replace('../../home/view/htmls/home.html')
+      var usuarios = JSON.parse(localStorage.getItem('usuarios'))
+      usuarios.forEach(user => {
+        if (user.logado == true) {
+          console.log(user)
+          user.produtos.push(produto)
+        }
+      })
+      localStorage.setItem('usuarios', JSON.stringify(usuarios))
+      window.location.replace('../../home/view/htmls/home.html')
+    }
   }
 })
