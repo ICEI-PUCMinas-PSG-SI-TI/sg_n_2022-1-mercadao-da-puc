@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <link rel="icon" type="image/x-icon" href="../../../communs/res/img/PUC2.png">
   <title>Mercadão</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../styles/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
@@ -24,12 +25,17 @@
   <h2>Cadastrar Produto</h2>
   <form id="formDescricao" method="post" >
     <div class="form-group">
-      <label for="nome">Descrição:</label>
-      <input type="descricao" class="form-control" id="descricao" placeholder="O que é o seu produto?" name="descricao">
+      <label for="descricao">Nome:</label>
+      <input type="text" class="form-control" id="nome" placeholder="Digite o nome do seu produto." name="nome">
+    </div><br>
+
+    <div class="form-group">
+      <label for="descricao">Descrição:</label>
+      <textarea name="descricao" form="formDescricao" class="textarea" id="descricao" maxlength="1200" placeholder="Descreva o seu produto em até 1200 caracteres."></textarea>
     </div><br>
   <div class="form-group">
       <label for="nome">Preço Desejado:</label>
-      <input type="text" class="form-control" id="preco" placeholder="Qual o preço do seu produto?" name="preco">
+      <input type="number" class="form-control" id="preco" placeholder="Qual o preço do seu produto?" name="preco">
     </div><br>
   <div class="form-group">
       <label for="nome">Categorias:</label>

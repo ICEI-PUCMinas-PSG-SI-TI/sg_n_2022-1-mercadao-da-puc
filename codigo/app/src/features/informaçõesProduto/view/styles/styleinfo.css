@@ -100,7 +100,14 @@ body {
   text-align: center;
   margin: 20px 0px;
 }
-
+.favoritos{
+  font-size: 1.5rem;
+  padding: 20px;
+  color: #971010;
+}
+.adicionar{
+  padding: 10px;
+}
 .chatbtn {
   width: 300px;
   font-size: 1.8em;
@@ -110,11 +117,6 @@ body {
   border: 1px solid #0d6efd;
   margin-bottom: 20px;
 }
-
-.buyBtn {
-  margin: 20px 0px;
-}
-
 .footer {
   background-color: #18191a;
   color: white;
