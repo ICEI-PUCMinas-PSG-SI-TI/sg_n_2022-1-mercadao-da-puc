@@ -23,11 +23,11 @@
     <link rel="icon" type="image/x-icon" href="../../../../communs/res/img/PUC2.png">
     <title>Produto</title>
   </head>
-  <body>
+  <body onload="iniciarTela();">
     <header class="container-fluid headerContainer">
       <div class="row">
         <div class="col-lg-1 col-md-2 logo">
-           <img src="../../../../communs/res/img/PUC2.png" alt="LOGO" />
+           <a href="../../../home/view/htmls/home.html"><img src="../../../../communs/res/img/PUC2.png" alt="LOGO" /></a>
         </div>
         <form action="" class="col-lg-8 col-md-10 search">
           <input
@@ -41,17 +41,12 @@
         </form>
             
                 <div class="col-lg-1 col-md-4 loginDiv">
-                  <a href="../../../cadastro/view/htmls/cadastro.html" class="login"><span> Cadastre-se</span></a>
+                  <a href="../../../cadastro/view/htmls/cadastro.html" class="login" id="cadastre-se"><span> Cadastre-se</span></a>
+                  <a href="#" id="nome_user"><span></span></a>
                 </div>
                 <div class="col-lg-1 col-md-4 comprasDiv">
-                  <a href="#" class="compras"><span>Compras</span></a>
+                  <a href="#" class="compras"><span><i class="fa-solid fa-star"></i> Favoritos</span></a>
                 </div>  
-                
-                <div class="col-lg-1 col-md-4 cartDiv">
-                  <a href="#" class="cart"
-                    ><i class="fa-solid fa-cart-shopping fa-lg"></i>
-                  <span class="textCart">Carrinho</span></a
-                >
               </div>
             </div>
         </div>
@@ -77,7 +72,7 @@
                 <a class="nav-link" href="#">Aulas particulares</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btnAnunciar" href="#"
+                <a class="nav-link btnAnunciar" href="../../../cadastroProduto/htmls/cadastroProduto.html"
                   ><button type="button" class="btn btn-outline-danger btn-lg">
                     <i class="fa-solid fa-camera-retro"></i> Anunciar
                 </button></a
@@ -89,7 +84,7 @@
       </header>
       <main class="container">
         <div class="row">
-          <h1 class="nome col-12 text-center">NOME DO PRODUTO</h1>
+          <h1 id="nomeProduto" class="nome col-12 text-center">NOME DO PRODUTO</h1>
         </div>
         <div class="row">
           <div id="carouselExampleIndicators" class="carousel slide col-lg-9" data-bs-ride="carousel">
@@ -100,13 +95,13 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="../../res/img/vestidoRosa.jpg" class="d-block w-100" alt="...">
+                <img src="../../res/img/notebook.jpeg" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="../../res/img/vestidoRosa.jpg" class="d-block w-100" alt="...">
+                <img src="../../res/img/notebook.jpeg" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="../../res/img/vestidoRosa.jpg" class="d-block w-100" alt="...">
+                <img src="../../res/img/notebook.jpeg" class="d-block w-100" alt="...">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -120,38 +115,40 @@
           </div>
           <div class="col-lg-3">
             <h2>Preço:</h2>
-            <h3 class="info">67R$</h3>
+            <h3 id="precoProduto" class="info">67R$</h3>
             <h2>Unidade:</h2>
-            <h3 class="info">São Gabriel</h3>
+            <h3 id="entregaProduto" class="info">São Gabriel</h3>
             <h2>Estado de uso:</h2>
-            <h3 class="info">Novo</h3>
+            <h3 id="estadoProduto" class="info">Novo</h3>
             <h2>Categoria:</h2>
-            <h3 class="info">Roupas</h3>
+            <h3 id="categoriaProduto" class="info">Roupas</h3>
           </div>
         </div>
         <div class="row">
-          <div class="col-12 chat text-center"><button  class="chatbtn btn btn-primary"> <span>Chat </span><i class="fa-regular fa-handshake"></i></button></div>
+          <div class="col-12 favoritos text-center" id="favoritos">
+           <span class="adicionar" id="addFav">Adicionar aos Favoritos</span>  <i id="heartFav"class="fa-regular fa-heart heart"></i> 
+          </div>
           <div class="row">
             <div class="col-12 descricao">
               <h3 class="text-center">Descrição</h3>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci, voluptate modi voluptatibus harum at, aliquam minus necessitatibus libero accusantium dicta deleniti nemo quae rerum. Rem dolorem doloribus inventore nisi eos.
+              <p id="descricao">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci, voluptate modi voluptatibus harum at, aliquam minus necessitatibus libero accusantium dicta deleniti nemo quae rerum. Rem dolorem doloribus inventore nisi eos.
               Amet mollitia odit repudiandae aliquid natus? Consequuntur laborum beatae inventore? Corporis error, reprehenderit quo optio nostrum dignissimos, saepe impedit modi maiores aliquam nam nihil, eaque laborum fuga ea. Fugit, sunt?</p>
             </div>
           </div>
         </div>
+        
         <div class="row">
           <div class="col-12 text-center"><h2>Dados do vendedor</h2></div>
           <ul class="list-group list-group-flush col-12">
-            <li class="list-group-item">NOME</li>
-            <li class="list-group-item">IDADE</li>
-            <li class="list-group-item">FOTO</li>
-            <li class="list-group-item">Unidade que estuda</li>
+            <li class="list-group-item" id="nomeUsuario">NOME</li>
+            <li class="list-group-item" id="emailUsuario">Email</li>
+            <li class="list-group-item" id="pixUsuario">PIX</li>
+            <li class="list-group-item" id="unidadeUsuario">Unidade que estuda</li>
           </ul>
         </div>
         <div class="row">
           <div class="col-12 text-center">
-            <button class="buyBtn btn btn-warning">COMPRAR <i class="fa-solid fa-cart-shopping"></i></button>
-            <span>X restantes</span>
+            <div class="col-12 chat text-center"><button  class="chatbtn btn btn-primary"> <span>Chat </span><i class="fa-regular fa-handshake"></i></button></div>
           </div>
         </div>
       </main>
@@ -161,6 +158,8 @@
          <h2 class="col text-center">PUC MINAS TODOS OS DIREITOS RESERVADOS - TERMOS DE USO</h2>
        </div>
       </footer>
+      <script type="text/javascript" src="../jsview/info.js"></script>
+      <script src="../infoProduto.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

@@ -75,6 +75,8 @@ function Usuario(nomeCadastro,senhaCadastro,emailCadastro,pixCadastro,descricaoC
     this.logado = logadoCadastro;
     this.unidade = unidadePuc;
     this.genero = generoCadastro;
+    this.produtos = [];
+    this.produtosFavoritos = [];
 }
 
   /**
@@ -89,7 +91,7 @@ function salvar(usuario) {
     }
     usuarios = JSON.parse(localStorage.getItem('usuarios'))
     let usuarioAtual = {nome:usuario.nome, senha:usuario.senha, email: usuario.email, pix:usuario.pix()
-        ,descricao: usuario.descricao, number:usuario.number,unidade:usuario.unidade,logado:usuario.logado,genero:usuario.genero}
+        ,descricao: usuario.descricao, number:usuario.number,unidade:usuario.unidade,logado:usuario.logado,genero:usuario.genero, produtos: usuario.produtos, produtosFavoritos: usuario.produtosFavoritos}
     //console.log(`usuario ${usuarioAtual.senha}`)
     usuarios.push(usuarioAtual)
     localStorage.setItem('usuarios',JSON.stringify(usuarios));
@@ -127,7 +129,26 @@ function checkEmail(email1,email2){
         alert('Os emails informados nao correspondem')
         return false
     }else{
+        if(verifyIfEmailExist(email1)){
+            alert('O email já foi cadastrado')
+            return false
+        }
         return true
+    }
+}
+
+function verifyIfEmailExist(email){
+    console.log(email)
+    if (localStorage.getItem('usuarios') != null) {
+        var emailExist = false
+        var usuarios = JSON.parse(localStorage.getItem('usuarios'))
+        usuarios.forEach(user => {
+          if (user.email == email) {
+            console.log(user.email)
+            emailExist = true
+          }
+        })
+        return emailExist
     }
 }
 function checkNumber(number1){

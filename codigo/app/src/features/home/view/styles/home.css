@@ -36,11 +36,11 @@ body{
     text-decoration: none;
     color: black;
 }
-.comprasDiv{
+.comprasDiv{ /* favoritos div */
     padding-top: 30px;
 
 }
-.compras{
+.compras{ /* favoritos */
     text-decoration: none;
     color: black;
 }

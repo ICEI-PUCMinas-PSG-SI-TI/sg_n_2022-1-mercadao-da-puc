@@ -45,15 +45,10 @@
               <a href="../../../cadastro/view/htmls/cadastro.html" id ="cadastre-se" class="login"><span> Cadastre-se</span></a>
               <a href="#" id="nome_user"><span></span></a>
             </div>
-            <div class="col-lg-1 col-md-4 comprasDiv">
-              <a href="#" class="compras"><span>Compras</span></a>
+            <div class="col-lg-2 col-md-4 comprasDiv">
+              <a href="#" class="compras"><span><i class="fa-solid fa-star"></i> Favoritos</span></a>
             </div>  
             
-            <div class="col-lg-1 col-md-4 cartDiv">
-              <a href="#" class="cart"
-                ><i class="fa-solid fa-cart-shopping fa-lg"></i>
-              <span class="textCart">Carrinho</span></a
-            >
           </div>
         </div>
     </div>
@@ -79,8 +74,8 @@
             <a class="nav-link" href="#">Aulas particulares</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btnAnunciar" href="../../../cadastroProduto/htmls/cadastroProduto.html"
-              ><button type="button" class="btn btn-outline-danger btn-lg">
+            <a class="nav-link btnAnunciar"
+              ><button onclick="cadastrarProduto();" type="button" class="btn btn-outline-danger btn-lg">
                 <i class="fa-solid fa-camera-retro"></i> Anunciar
             </button></a
             >
@@ -150,8 +145,8 @@
       <div class="row">
         <h1 class="recentes">Recentes</h1>
       </div>
-      <div class="row productRow">
-        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
+      <div class="row productRow" id="caixaProdutos1">
+        <!-- <div class="col-lg-3 col-md-6 col-sm-12 productCol">
           <img src="../../res/img/notebook.jpeg" alt="" />
           <p>Notebook ITAUTEC</p>
           <p><strong>R$500</strong></p>
@@ -170,7 +165,7 @@
           <img src="../../res/img/livros.jpg" alt="" />
           <p>Coleção livros Percy Jackson</p>
           <p><strong>R$150</strong></p>
-        </div>
+        </div> -->
       </div>
       <div class="row productRow">
         <div class="col-lg-3 col-md-6 col-sm-12 productCol">
