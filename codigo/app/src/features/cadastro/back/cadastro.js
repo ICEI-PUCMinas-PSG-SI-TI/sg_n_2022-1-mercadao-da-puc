@@ -129,7 +129,26 @@ function checkEmail(email1,email2){
         alert('Os emails informados nao correspondem')
         return false
     }else{
+        if(verifyIfEmailExist(email1)){
+            alert('O email já foi cadastrado')
+            return false
+        }
         return true
+    }
+}
+
+function verifyIfEmailExist(email){
+    console.log(email)
+    if (localStorage.getItem('usuarios') != null) {
+        var emailExist = false
+        var usuarios = JSON.parse(localStorage.getItem('usuarios'))
+        usuarios.forEach(user => {
+          if (user.email == email) {
+            console.log(user.email)
+            emailExist = true
+          }
+        })
+        return emailExist
     }
 }
 function checkNumber(number1){
