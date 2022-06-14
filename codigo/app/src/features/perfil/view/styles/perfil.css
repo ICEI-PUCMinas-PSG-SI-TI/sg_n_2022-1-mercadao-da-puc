@@ -1,64 +1,116 @@
-*{
+* {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-body{
-  background-color: #f7f7f7f8;
-  overflow-x: hidden;
-}
-.headerContainer{
+.headerContainer {
   margin: 10px;
 }
-.mainContainer{
+.mainContainer {
   margin: 10px;
 }
-.logo img{
+.logo img {
   width: 100%;
   max-width: 100px;
 }
 
-.search{
+.search {
   text-align: right;
   padding-top: 20px;
 }
-.searchInput{
- width: 90%;
- height: 40px;
-}
-.searchBtn{
+.searchInput {
+  width: 90%;
   height: 40px;
 }
-.loginDiv{
-  padding-top: 30px;
-  
+.searchBtn {
+  height: 40px;
 }
-.login{
+.loginDiv {
+  padding-top: 30px;
+}
+.login {
   text-decoration: none;
   color: black;
 }
-.comprasDiv{ /* favoritos div */
+.comprasDiv {
+  /* favoritos div */
   padding-top: 30px;
+}
+.compras {
+  /* favoritos */
+  text-decoration: none;
+  color: black;
+}
+.cartDiv {
+  padding-top: 30px;
+}
+.cart {
+  text-decoration: none;
+  color: black;
+}
 
-}
-.compras{ /* favoritos */
-  text-decoration: none;
-  color: black;
-}
-.cartDiv{
-  padding-top: 30px;
-}
-.cart{
-  text-decoration: none;
-  color: black;
-}
-
-.menu{
+.menu {
   min-width: 100%;
 }
-.menu a{
-color: #dc3545;
-font-size: 1.6em;
+.menu a {
+  color: #dc3545;
+  font-size: 1.6em;
 }
-.menu a:hover{
+.menu a:hover {
   color: #971010;
+}
+body {
+  margin-top: 20px;
+  color: #1a202c;
+  text-align: left;
+  background-color: #e2e8f0;
+}
+.main-body {
+  padding: 15px;
+}
+.card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1rem;
+}
+
+.gutters-sm {
+  margin-right: -8px;
+  margin-left: -8px;
+  justify-content: center;
+}
+
+.gutters-sm > .col,
+.gutters-sm > [class*='col-'] {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+.mb-3,
+.my-3 {
+  margin-bottom: 1rem !important;
+}
+
+.bg-gray-300 {
+  background-color: #e2e8f0;
+}
+.h-100 {
+  height: 100% !important;
+}
+.shadow-none {
+  box-shadow: none !important;
 }
