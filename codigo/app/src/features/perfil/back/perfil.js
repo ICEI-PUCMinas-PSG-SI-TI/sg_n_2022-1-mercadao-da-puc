@@ -31,7 +31,6 @@ let usuario = JSON.parse(localStorage.getItem('usuarios'))
 for (let i = 0; i < usuario.length; i++) {
   if (usuario[i].logado) {
     usuarioAtual = usuario[i]
-    localStorage.setItem('numeroArrayUsuario', i)
   }
 }
 atualizaDadosPerfil()
