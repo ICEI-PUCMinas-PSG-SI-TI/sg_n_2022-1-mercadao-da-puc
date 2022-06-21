@@ -1,104 +1,124 @@
-*{
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-body{
-    background-color: #f7f7f7f8;
-    overflow-x: hidden;
+body {
+  background-color: #f7f7f7f8;
+  overflow-x: hidden;
 }
-.headerContainer{
-    margin: 10px;
+.headerContainer {
+  margin: 10px;
 }
-.mainContainer{
-    margin: 10px;
+.mainContainer {
+  margin: 10px;
 }
-.logo img{
-    width: 100%;
-    max-width: 100px;
-}
-
-.search{
-    text-align: right;
-    padding-top: 20px;
-}
-.searchInput{
-   width: 90%;
-   height: 40px;
-}
-.searchBtn{
-    height: 40px;
-}
-.loginDiv{
-    padding-top: 30px;
-    
-}
-.login{
-    text-decoration: none;
-    color: black;
-}
-.comprasDiv{ /* favoritos div */
-    padding-top: 30px;
-
-}
-.compras{ /* favoritos */
-    text-decoration: none;
-    color: black;
-}
-.cartDiv{
-    padding-top: 30px;
-}
-.cart{
-    text-decoration: none;
-    color: black;
+.header {
+  justify-content: space-between;
 }
 
-.menu{
-    min-width: 100%;
+.segundaDiv {
+  flex-grow: 2;
 }
-.menu a{
- color: #dc3545;
- font-size: 1.6em;
+.btnSearch {
+  margin: -5px;
 }
-.menu a:hover{
-    color: #971010;
+.logo img {
+  width: 100%;
+  max-width: 100px;
 }
-.btnAnunciar{
-    
+.formSearch {
+  width: 100%;
 }
-.carousel-item img{
-    max-height: 400px;
+.searchBox {
+  width: 100%;
 }
-.recentes{
-    text-align: center;
+.login {
+  text-decoration: none;
+  color: #000 !important;
+  font-size: 1rem !important;
 }
-.productRow img{
-    width: 100%;
-    margin-top: 20px;
-    min-width: 100%;
-    min-height: 300px;
-    max-height:300px
+.logado {
+  text-decoration: none;
+  color: #000 !important;
+  font-size: 1rem !important;
 }
-.productRow p{
- text-align: center;
+.lista {
+  display: flex;
+  padding: 40px;
+  width: 500px;
+  justify-content: space-between;
 }
-.productCol p{  
-    color: rgb(51, 45, 71);
+.loginDiv {
 }
-.titulo{
-    text-align: center;
+.favDiv {
 }
-.contatoCol{
-    text-align: center;
+.favoritos {
+  text-decoration: none;
+  color: #000 !important;
+  font-size: 1rem !important;
 }
-.contatoCol i{
-    padding: 20px 10px;
+
+.menu {
+  min-width: 100%;
 }
-.SobreRow{
-    color: rgb(189, 39, 39);
+.menu a {
+  color: #dc3545;
+  font-size: 1.6em;
 }
-.footerCopyright{
-    text-align: center;
-    background-color: #120e27f8;
-    color: white;
-    padding: 10px 0px;
+.menu a:hover {
+  color: #971010;
+}
+.btnAnunciar {
+}
+.carousel-item img {
+  max-height: 400px;
+}
+.recentes {
+  text-align: center;
+}
+.productRow img {
+  width: 100%;
+  margin-top: 20px;
+  min-width: 100%;
+  min-height: 300px;
+  max-height: 300px;
+}
+.productRow p {
+  text-align: center;
+}
+.productCol p {
+  color: rgb(51, 45, 71);
+}
+.titulo {
+  text-align: center;
+}
+.contatoCol {
+  text-align: center;
+}
+.contatoCol i {
+  padding: 20px 10px;
+}
+.SobreRow {
+  color: rgb(189, 39, 39);
+}
+.footerCopyright {
+  text-align: center;
+  background-color: #120e27f8;
+  color: white;
+  padding: 10px 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .segundaDiv {
+    flex-grow: 0;
+  }
+  .searchBox {
+    width: 200px;
+  }
+  .formSearch {
+    padding: 70px 10px 10px;
+  }
+  .loginDiv {
+    padding-bottom: 10px;
+  }
 }

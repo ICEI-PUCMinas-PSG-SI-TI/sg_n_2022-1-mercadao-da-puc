@@ -21,97 +21,139 @@
       src="https://kit.fontawesome.com/b139898041.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="icon" type="image/x-icon" href="../../../../communs/res/img/PUC2.png">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../../../communs/res/img/PUC2.png"
+    />
     <title>Mercadão PUC</title>
   </head>
   <body onload="verificarLogado()">
     <header class="container-fluid headerContainer">
-        <div class="row">
-          <div class="col-lg-1 col-md-2 logo">
-            <img src="../../../../communs/res/img/PUC2.png" alt="LOGO" />
-          </div>
-          <form action="" class="col-lg-8 col-md-10 search">
-            <input
-              type="text"
-              placeholder="Estou procurando por..."
-              class="searchInput"
-            />
-            <button type="submit" class="btn btn-primary searchBtn">
-              <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-            </button>
-          </form>
-        
-            <div class="col-lg-1 col-md-4 loginDiv">
-              <a href="../../../cadastro/view/htmls/cadastro.html" id ="cadastre-se" class="login"><span> Cadastre-se</span></a>
-              <a href="../../../perfil/view/htmls/perfil.html" id="nome_user"><span></span></a>
-            </div>
-            <div class="col-lg-2 col-md-4 comprasDiv">
-              <a href="#" class="compras"><span><i class="fa-solid fa-star"></i> Favoritos</span></a>
-            </div>  
-            
-          </div>
+      <div class="d-flex p-2 flex-row align-items-center header">
+        <div class="p-2 logo">
+          <img src="../../../../communs/res/img/PUC2.png" alt="LOGO" />
         </div>
-    </div>
-    <div class="row">
-      <nav class="col-12">
-        <ul class="nav menu justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Roupas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Eletrônicos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Acessórios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Livros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Esportes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Aulas particulares</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btnAnunciar"
-              ><button onclick="cadastrarProduto();" type="button" class="btn btn-outline-danger btn-lg">
-                <i class="fa-solid fa-camera-retro"></i> Anunciar
-            </button></a
+        <div class="p-2 segundaDiv">
+          <nav class="navbar navbar-expand-lg navbar-light menu">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
             >
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main class="container-fluid mainContainer">
-    <div class="row">
-      <div class="col-12">
-        <div
-          id="carouselExampleControls"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                src="../../res/img/carousel3.png"
-                class="d-block w-100"
-                alt="..."
-              />
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <form class="d-flex formSearch">
+                <input
+                  class="buttonSearch form-control me-2 searchBox"
+                  id="searchInput"
+                  type="search"
+                  placeholder="O que você procura?"
+                  aria-label="Search"
+                />
+                <a href="#"
+                  ><button
+                    class="btn btn-outline-dark btnSearch"
+                    id="btnSearch"
+                    type="button"
+                  >
+                    <i class="fa-solid fa-magnifying-glass"></i></button
+                ></a>
+              </form>
+              <ul class="navbar-nav mb-2 mb-lg-0 lista">
+                <li class="nav-item loginDiv">
+                  <a
+                    href="../../../cadastro/view/htmls/cadastro.html"
+                    id="cadastre-se"
+                    class="login"
+                    ><span> Cadastre-se</span></a
+                  >
+                  <a
+                    class="logado"
+                    href="../../../perfil/view/htmls/perfil.html"
+                    id="nome_user"
+                    ><span></span
+                  ></a>
+                </li>
+                <li class="nav-item favDiv">
+                  <a href="#" class="favoritos"
+                    ><span><i class="fa-solid fa-star"></i> Favoritos</span></a
+                  >
+                </li>
+              </ul>
             </div>
-            <div class="carousel-item">
-              <img
-                src="../../res/img/carousel.png"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                src="../../res/img/carousel2.png"
-                class="d-block w-100"
-                alt="..."
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <nav class="col-12">
+          <ul class="nav menu justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Roupas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Eletrônicos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Acessórios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Livros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Esportes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Aulas particulares</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btnAnunciar"
+                ><button
+                  onclick="cadastrarProduto();"
+                  type="button"
+                  class="btn btn-outline-danger btn-lg"
+                >
+                  <i class="fa-solid fa-camera-retro"></i> Anunciar
+                </button></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="container-fluid mainContainer">
+      <div class="row">
+        <div class="col-12">
+          <div
+            id="carouselExampleControls"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="../../res/img/carousel3.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../../res/img/carousel.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../../res/img/carousel2.png"
+                  class="d-block w-100"
+                  alt="..."
                 />
               </div>
             </div>
@@ -133,7 +175,7 @@
               data-bs-target="#carouselExampleControls"
               data-bs-slide="next"
             >
-            <span
+              <span
                 class="carousel-control-next-icon"
                 aria-hidden="true"
               ></span>
@@ -211,18 +253,18 @@
     <footer class="container-fluid footerCopyright">
       <div class="row">
         <div class="col-12">
-            <h3>
-                COPYRIGHT © TODOS OS DIREITOS RESERVADOS PUC MINAS SISTEMAS DE
-                INFORMAÇÃO
-              </h3>
-            </div>
-          </div>
-        </footer>
-        <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-          crossorigin="anonymous"
-        ></script>
-        <script src="../../back/home2.js"></script>
-      </body>
-    </html>
+          <h3>
+            COPYRIGHT © TODOS OS DIREITOS RESERVADOS PUC MINAS SISTEMAS DE
+            INFORMAÇÃO
+          </h3>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../back/home2.js"></script>
+  </body>
+</html>
