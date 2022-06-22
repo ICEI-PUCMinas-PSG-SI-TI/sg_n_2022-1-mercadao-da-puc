@@ -16,56 +16,50 @@ body {
   margin: 10px;
 }
 
-.nome {
-  margin-bottom: 40px;
+.header {
+  justify-content: space-between;
 }
 
+.segundaDiv {
+  flex-grow: 2;
+}
+.btnSearch {
+  margin: -5px;
+}
 .logo img {
   width: 100%;
   max-width: 100px;
 }
-
-.search {
-  text-align: right;
-  padding-top: 20px;
+.formSearch {
+  width: 100%;
 }
-
-.searchInput {
-  width: 90%;
-  height: 40px;
+.searchBox {
+  width: 100%;
 }
-
-.searchBtn {
-  height: 40px;
-}
-
-.loginDiv {
-  padding-top: 30px;
-
-}
-
 .login {
   text-decoration: none;
-  color: black;
+  color: #000 !important;
+  font-size: 1rem !important;
 }
-
-.comprasDiv {
-  padding-top: 30px;
-
-}
-
-.compras {
+.logado {
   text-decoration: none;
-  color: black;
+  color: #000 !important;
+  font-size: 1rem !important;
 }
-
-.cartDiv {
-  padding-top: 30px;
+.lista {
+  display: flex;
+  padding: 40px;
+  width: 500px;
+  justify-content: space-between;
 }
-
-.cart {
+.loginDiv {
+}
+.favDiv {
+}
+.favoritos {
   text-decoration: none;
-  color: black;
+  color: #000 !important;
+  font-size: 1rem !important;
 }
 
 .menu {
@@ -100,12 +94,12 @@ body {
   text-align: center;
   margin: 20px 0px;
 }
-.favoritos{
+.favoritos {
   font-size: 1.5rem;
   padding: 20px;
   color: #971010;
 }
-.adicionar{
+.adicionar {
   padding: 10px;
 }
 .chatbtn {
@@ -121,4 +115,25 @@ body {
   background-color: #18191a;
   color: white;
   padding: 5px;
+}
+@media screen and (max-width: 768px) {
+  .segundaDiv {
+    flex-grow: 0;
+  }
+  .searchBox {
+    width: 200px;
+  }
+  .formSearch {
+    padding: 70px 10px 10px;
+  }
+  .loginDiv {
+    padding-bottom: 10px;
+  }
+  .textProduto {
+    text-align: center;
+  }
+  .descricao {
+    justify-content: center;
+    margin-left: 10px;
+  }
 }
