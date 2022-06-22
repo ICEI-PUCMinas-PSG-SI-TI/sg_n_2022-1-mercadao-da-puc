@@ -8,51 +8,50 @@
 .mainContainer {
   margin: 10px;
 }
+.header {
+  justify-content: space-between;
+}
+
+.segundaDiv {
+  flex-grow: 2;
+}
+.btnSearch {
+  margin: -5px;
+}
 .logo img {
   width: 100%;
   max-width: 100px;
 }
-
-.search {
-  text-align: right;
-  padding-top: 20px;
+.formSearch {
+  width: 100%;
 }
-.searchInput {
-  width: 90%;
-  height: 40px;
-}
-.searchBtn {
-  height: 40px;
-}
-.loginDiv {
-  padding-top: 30px;
+.searchBox {
+  width: 100%;
 }
 .login {
   text-decoration: none;
-  color: black;
+  color: #000 !important;
+  font-size: 1rem !important;
 }
-.comprasDiv {
-  /* favoritos div */
-  padding-top: 30px;
-}
-.compras {
-  /* favoritos */
+.logado {
   text-decoration: none;
-  color: black;
+  color: #000 !important;
+  font-size: 1rem !important;
 }
-.nomeLogado {
+.lista {
+  display: flex;
+  padding: 40px;
+  width: 500px;
+  justify-content: space-between;
+}
+.loginDiv {
+}
+.favDiv {
+}
+.favoritos {
   text-decoration: none;
-  color: #000;
-}
-.nomeLogado:hover {
-  color: #971010;
-}
-.cartDiv {
-  padding-top: 30px;
-}
-.cart {
-  text-decoration: none;
-  color: black;
+  color: #000 !important;
+  font-size: 1rem !important;
 }
 
 .menu {
@@ -119,4 +118,18 @@ body {
 }
 textarea {
   resize: none;
+}
+@media screen and (max-width: 768px) {
+  .segundaDiv {
+    flex-grow: 0;
+  }
+  .searchBox {
+    width: 200px;
+  }
+  .formSearch {
+    padding: 70px 10px 10px;
+  }
+  .loginDiv {
+    padding-bottom: 10px;
+  }
 }
