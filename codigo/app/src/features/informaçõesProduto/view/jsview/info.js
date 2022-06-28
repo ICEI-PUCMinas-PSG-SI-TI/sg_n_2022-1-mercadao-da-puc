@@ -3,6 +3,18 @@ let addFav = document.getElementById('addFav')
 let favoritos = document.getElementById('favoritos')
 let isFav = false
 let usuario = JSON.parse(localStorage.getItem('usuarios'))
+let btnZap = document.getElementById('mandaZap')
+
+window.onload = () => {
+  for (let i = 0; i < usuario.length; i++) {
+    if (usuario[i].logado) {
+      btnZap.setAttribute(
+        'href',
+        `https://api.whatsapp.com/send?phone=55${usuario[i].number}`
+      )
+    }
+  }
+}
 
 addFav.addEventListener('click', () => {
   if (isFav == false) {
