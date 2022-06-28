@@ -68,7 +68,6 @@ function filtroProdutos(paramCategoria) {
     filterProdutos = user.produtos.filter(produto => produto.categoria == paramCategoria)
     // var divNova = document.createElement(`caixaProduto${cont}`)
     filterProdutos.forEach(p => {
-      console.log(filterProdutos);
       texto += `<div onclick="cliqueProduto(${p.id})" class="col-lg-3 col-md-6 col-sm-12 productCol" id="${p.id}"> <img src="../../res/img/notebook.jpeg" alt="" /> <p>${p.nome}</p> <p><strong>R$${p.preco}</strong></p></div>`
     })
   })
