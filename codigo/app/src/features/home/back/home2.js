@@ -60,6 +60,37 @@ function cliqueProduto(idProduto) {
 }
 
 function filtroProdutos(paramCategoria) {
+  document.querySelector('.recentes').innerHTML = paramCategoria
+  if (paramCategoria == 'Roupas') {
+    document.getElementById('imgCarousel1').setAttribute('src','../../res/img/FiltroRoupa.jpg')
+    document.getElementById('imgCarousel2').setAttribute('src','../../res/img/FiltroRoupa.jpg')
+    document.getElementById('imgCarousel3').setAttribute('src','../../res/img/FiltroRoupa.jpg')
+  }
+  if (paramCategoria == 'Eletronicos') {
+    document.getElementById('imgCarousel1').setAttribute('src','../../res/img/FiltroEletronico.jpg')
+    document.getElementById('imgCarousel2').setAttribute('src','../../res/img/FiltroEletronico.jpg')
+    document.getElementById('imgCarousel3').setAttribute('src','../../res/img/FiltroEletronico.jpg')
+  }
+  if (paramCategoria == 'Acessorios') {
+    document.getElementById('imgCarousel1').setAttribute('src','../../res/img/FiltroAcessorio.jpg')
+    document.getElementById('imgCarousel2').setAttribute('src','../../res/img/FiltroAcessorio.jpg')
+    document.getElementById('imgCarousel3').setAttribute('src','../../res/img/FiltroAcessorio.jpg')
+  }
+  if (paramCategoria == 'Livros') {
+    document.getElementById('imgCarousel1').setAttribute('src','../../res/img/FiltroLivro.jpg')
+    document.getElementById('imgCarousel2').setAttribute('src','../../res/img/FiltroLivro.jpg')
+    document.getElementById('imgCarousel3').setAttribute('src','../../res/img/FiltroLivro.jpg')
+  }
+  if (paramCategoria == 'Esportes') {
+    document.getElementById('imgCarousel1').setAttribute('src','../../res/img/FiltroEsporte.jpg')
+    document.getElementById('imgCarousel2').setAttribute('src','../../res/img/FiltroEsporte.jpg')
+    document.getElementById('imgCarousel3').setAttribute('src','../../res/img/FiltroEsporte.jpg')
+  }
+  if (paramCategoria == 'Serviços') {
+    document.getElementById('imgCarousel1').setAttribute('src','../../res/img/FiltroServico.jpg')
+    document.getElementById('imgCarousel2').setAttribute('src','../../res/img/FiltroServico.jpg')
+    document.getElementById('imgCarousel3').setAttribute('src','../../res/img/FiltroServico.jpg')
+  }
   let texto = ''
   let telaProduto = document.getElementById('caixaProdutos1')
   var usuarios = JSON.parse(localStorage.getItem('usuarios'))
@@ -67,6 +98,7 @@ function filtroProdutos(paramCategoria) {
     let filterProdutos = []
     filterProdutos = user.produtos.filter(produto => produto.categoria == paramCategoria)
     // var divNova = document.createElement(`caixaProduto${cont}`)
+    console.log(paramCategoria);
     filterProdutos.forEach(p => {
       texto += `<div onclick="cliqueProduto(${p.id})" class="col-lg-3 col-md-6 col-sm-12 productCol" id="${p.id}"> <img src="../../res/img/notebook.jpeg" alt="" /> <p>${p.nome}</p> <p><strong>R$${p.preco}</strong></p></div>`
     })
