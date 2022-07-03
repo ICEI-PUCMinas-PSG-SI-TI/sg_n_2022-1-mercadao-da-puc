@@ -2,6 +2,8 @@ let labelCadastre = document.getElementById('cadastre-se')
 let labelNomeLogado = document.getElementById('nome_user')
 var isLogado = false
 const btnMobile = document.getElementById('btnMobile')
+const API_KEY = '563492ad6f91700001000001af55cf3aad414e3184905c9992cbbb28'
+
 btnMobile.addEventListener('click', toggleMenu)
 btnMobile.addEventListener('touchstart', toggleMenu)
 
@@ -65,11 +67,13 @@ function filtroProdutos(paramCategoria) {
   var usuarios = JSON.parse(localStorage.getItem('usuarios'))
   usuarios.forEach(user => {
     let filterProdutos = []
-    filterProdutos = user.produtos.filter(produto => produto.categoria == paramCategoria)
+    filterProdutos = user.produtos.filter(
+      produto => produto.categoria == paramCategoria
+    )
     // var divNova = document.createElement(`caixaProduto${cont}`)
     filterProdutos.forEach(p => {
       texto += `<div onclick="cliqueProduto(${p.id})" class="col-lg-3 col-md-6 col-sm-12 productCol" id="${p.id}"> <img src="../../res/img/notebook.jpeg" alt="" /> <p>${p.nome}</p> <p><strong>R$${p.preco}</strong></p></div>`
     })
   })
-  telaProduto.innerHTML = texto;
+  telaProduto.innerHTML = texto
 }
