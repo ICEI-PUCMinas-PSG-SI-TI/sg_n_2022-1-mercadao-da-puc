@@ -92,8 +92,19 @@
         </div>
       </div>
       <div class="row">
-        <nav class="col-12">
-          <ul class="nav menu justify-content-center">
+        <nav class="col-12" id="nav">
+          <div class="menuMobile">
+            <button
+              aria-label="Abrir menu"
+              id="btnMobile"
+              aria-expanded="false"
+              aria-controls="menu"
+            >
+              Categorias
+              <span id="hamburger"></span>
+            </button>
+          </div>
+          <ul class="nav menu justify-content-center" id="menuCategoria">
             <li class="nav-item">
               <a class="nav-link" href="#">Roupas</a>
             </li>
@@ -246,12 +257,10 @@
         </ul>
       </div>
       <div class="row">
-        <div class="col-12 text-center">
-          <div class="col-12 chat text-center">
-            <button class="chatbtn btn btn-primary">
-              <span>Chat </span><i class="fa-regular fa-handshake"></i>
-            </button>
-          </div>
+        <div class="col-12 chat text-center">
+          <a class="zapzap" href="#" id="mandaZap">
+            <span>Chat </span><i class="fa-regular fa-handshake"></i>
+          </a>
         </div>
       </div>
     </main>
