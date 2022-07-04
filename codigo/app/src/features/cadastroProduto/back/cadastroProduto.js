@@ -1,83 +1,90 @@
+const API_KEY = '563492ad6f91700001000001af55cf3aad414e3184905c9992cbbb28'
+
+async function getImg(query) {
+  const baseURL = `https://api.pexels.com/v1/search?query=${query}`
+  const response = await fetch(baseURL, {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+      Authorization: API_KEY
+    }
+  })
+  const data = await response.json()
+  return data.photos[0].src.original
+}
+
 function checkNomeProduto(nome) {
-  if(nome.value == ''){
-      alert("Voce deve informar o nome do produto")
-      return false
-  }else{
-      return true
+  if (nome.value == '') {
+    alert('Voce deve informar o nome do produto')
+    return false
+  } else {
+    return true
   }
 }
 
 function checkDescricaoProduto(descricao) {
-  if(descricao.value == ''){
-      alert('Voce deve informar a descrição do produto')
-      return false
-  }else{
-      return true
+  if (descricao.value == '') {
+    alert('Voce deve informar a descrição do produto')
+    return false
+  } else {
+    return true
   }
 }
 
 function checkPrecoProduto(preco) {
-  if(preco.value == ''){
-      alert('Voce deve informar o preço do produto')
-      return false
-  }else{
-      return true
+  if (preco.value == '') {
+    alert('Voce deve informar o preço do produto')
+    return false
+  } else {
+    return true
   }
 }
 
 function checkMarcaProduto(marca) {
-  if(marca.value == ''){
+  if (marca.value == '') {
     alert('Voce deve informar a marca do produto')
     return false
-}else{
+  } else {
     return true
-}
+  }
 }
 
-function checkCategoriaProduto(){
+function checkCategoriaProduto() {
   if (document.getElementById('c1').checked) {
-      return document.getElementById('c1').value;
-  }else if (document.getElementById('c2').checked) {
-      return document.getElementById('c2').value;
-  }else if (document.getElementById('c3').checked) {
-      return document.getElementById('c3').value;
-  }else if (document.getElementById('c4').checked) {
-      return document.getElementById('c4').value;
-  }else if (document.getElementById('c5').checked) {
-    return document.getElementById('c5').value;
-}else if (document.getElementById('c6').checked) {
-    return document.getElementById('c6').value;
-}else if (document.getElementById('c7').checked) {
-    return document.getElementById('c7').value;
-}
+    return document.getElementById('c1').value
+  } else if (document.getElementById('c2').checked) {
+    return document.getElementById('c2').value
+  } else if (document.getElementById('c3').checked) {
+    return document.getElementById('c3').value
+  } else if (document.getElementById('c4').checked) {
+    return document.getElementById('c4').value
+  } else if (document.getElementById('c5').checked) {
+    return document.getElementById('c5').value
+  } else if (document.getElementById('c6').checked) {
+    return document.getElementById('c6').value
+  } else if (document.getElementById('c7').checked) {
+    return document.getElementById('c7').value
+  }
 }
 
-function checkEstadoProduto(){
+function checkEstadoProduto() {
   if (document.getElementById('e1').checked) {
-      return document.getElementById('e1').value;
-  }else if (document.getElementById('e2').checked) {
-      return document.getElementById('e2').value;
-  }else if (document.getElementById('e3').checked) {
-      return document.getElementById('e3').value;
+    return document.getElementById('e1').value
+  } else if (document.getElementById('e2').checked) {
+    return document.getElementById('e2').value
+  } else if (document.getElementById('e3').checked) {
+    return document.getElementById('e3').value
   }
 }
 
-
-var files = document.querySelector('input[name="files"]')
-
-files.addEventListener('change', function (file) {
-  var input = file.target
-
-  var reader = new FileReader()
-
-  reader.onload = function () {
-    var dataURL = reader.result
-    var output = document.getElementById('output')
-    output.src = dataURL
+function checkFotoProduto(foto) {
+  if (foto.value == '') {
+    alert('Voce deve informar o tipo do produto')
+    return false
+  } else {
+    return true
   }
-
-  reader.readAsDataURL(input.files[0])
-})
+}
 
 function atualizouUnidade() {
   let select1 = document.querySelector('#campui')
@@ -93,7 +100,7 @@ function atualizouQuantidade() {
 
 let salvar1 = document.getElementById('btnAdd')
 
-salvar1.addEventListener('click', function () {
+salvar1.addEventListener('click', async function () {
   var cont = 0
   var usuarios = JSON.parse(localStorage.getItem('usuarios'))
   usuarios.forEach(user => {
@@ -110,15 +117,24 @@ salvar1.addEventListener('click', function () {
     estadoDoProduto: checkEstadoProduto(),
     marca: document.getElementById('marca').value,
     quantidadeDoProduto: atualizouQuantidade(),
+    foto: document.getElementById('foto').value,
     id: cont
   }
   if (localStorage.getItem('usuarios') == null) {
     window.location.replace('../../login/view/htmls/login.html')
     alert('Usuário nao registrado ')
   } else {
-    if(checkNomeProduto(nome) && checkDescricaoProduto(descricao) && checkPrecoProduto(preco) 
-    &&  atualizouUnidade() != '' && checkMarcaProduto(marca) && atualizouQuantidade() != '') {
-
+    if (
+      checkNomeProduto(nome) &&
+      checkDescricaoProduto(descricao) &&
+      checkPrecoProduto(preco) &&
+      atualizouUnidade() != '' &&
+      checkMarcaProduto(marca) &&
+      atualizouQuantidade() != '' &&
+      checkFotoProduto(foto)
+    ) {
+      produto.foto = await getImg(produto.foto)
+      console.log(produto.foto)
       var usuarios = JSON.parse(localStorage.getItem('usuarios'))
       usuarios.forEach(user => {
         if (user.logado == true) {
