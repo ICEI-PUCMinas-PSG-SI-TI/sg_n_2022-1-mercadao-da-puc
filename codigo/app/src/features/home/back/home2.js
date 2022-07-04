@@ -2,7 +2,8 @@ let labelCadastre = document.getElementById('cadastre-se')
 let labelNomeLogado = document.getElementById('nome_user')
 var isLogado = false
 const btnMobile = document.getElementById('btnMobile')
-const API_KEY = '563492ad6f91700001000001af55cf3aad414e3184905c9992cbbb28'
+
+// All requests made with the client will be authenticated
 
 btnMobile.addEventListener('click', toggleMenu)
 btnMobile.addEventListener('touchstart', toggleMenu)
@@ -52,7 +53,7 @@ window.addEventListener('load', function (event) {
     user.produtos.forEach(produto => {
       // var divNova = document.createElement(`caixaProduto${cont}`)
       let telaProduto = document.getElementById('caixaProdutos1')
-      telaProduto.innerHTML += `<div onclick="cliqueProduto(${produto.id})" class="col-lg-3 col-md-6 col-sm-12 productCol" id="${produto.id}"> <img src="../../res/img/notebook.jpeg" alt="" /> <p>${produto.nome}</p> <p><strong>R$${produto.preco}</strong></p></div>`
+      telaProduto.innerHTML += `<div onclick="cliqueProduto(${produto.id})" class="col-lg-3 col-md-6 col-sm-12 productCol" id="${produto.id}"> <img src="${produto.foto}" alt="" /> <p>${produto.nome}</p> <p><strong>R$${produto.preco}</strong></p></div>`
     })
   })
 })
@@ -64,34 +65,70 @@ function cliqueProduto(idProduto) {
 function filtroProdutos(paramCategoria) {
   document.querySelector('.recentes').innerHTML = paramCategoria
   if (paramCategoria == 'Roupas') {
-    document.getElementById('imgCarousel1').setAttribute('src','../../res/img/FiltroRoupa.jpg')
-    document.getElementById('imgCarousel2').setAttribute('src','../../res/img/FiltroRoupa.jpg')
-    document.getElementById('imgCarousel3').setAttribute('src','../../res/img/FiltroRoupa.jpg')
+    document
+      .getElementById('imgCarousel1')
+      .setAttribute('src', '../../res/img/FiltroRoupa.jpg')
+    document
+      .getElementById('imgCarousel2')
+      .setAttribute('src', '../../res/img/FiltroRoupa.jpg')
+    document
+      .getElementById('imgCarousel3')
+      .setAttribute('src', '../../res/img/FiltroRoupa.jpg')
   }
   if (paramCategoria == 'Eletronicos') {
-    document.getElementById('imgCarousel1').setAttribute('src','../../res/img/FiltroEletronico.jpg')
-    document.getElementById('imgCarousel2').setAttribute('src','../../res/img/FiltroEletronico.jpg')
-    document.getElementById('imgCarousel3').setAttribute('src','../../res/img/FiltroEletronico.jpg')
+    document
+      .getElementById('imgCarousel1')
+      .setAttribute('src', '../../res/img/FiltroEletronico.jpg')
+    document
+      .getElementById('imgCarousel2')
+      .setAttribute('src', '../../res/img/FiltroEletronico.jpg')
+    document
+      .getElementById('imgCarousel3')
+      .setAttribute('src', '../../res/img/FiltroEletronico.jpg')
   }
   if (paramCategoria == 'Acessorios') {
-    document.getElementById('imgCarousel1').setAttribute('src','../../res/img/FiltroAcessorio.jpg')
-    document.getElementById('imgCarousel2').setAttribute('src','../../res/img/FiltroAcessorio.jpg')
-    document.getElementById('imgCarousel3').setAttribute('src','../../res/img/FiltroAcessorio.jpg')
+    document
+      .getElementById('imgCarousel1')
+      .setAttribute('src', '../../res/img/FiltroAcessorio.jpg')
+    document
+      .getElementById('imgCarousel2')
+      .setAttribute('src', '../../res/img/FiltroAcessorio.jpg')
+    document
+      .getElementById('imgCarousel3')
+      .setAttribute('src', '../../res/img/FiltroAcessorio.jpg')
   }
   if (paramCategoria == 'Livros') {
-    document.getElementById('imgCarousel1').setAttribute('src','../../res/img/FiltroLivro.jpg')
-    document.getElementById('imgCarousel2').setAttribute('src','../../res/img/FiltroLivro.jpg')
-    document.getElementById('imgCarousel3').setAttribute('src','../../res/img/FiltroLivro.jpg')
+    document
+      .getElementById('imgCarousel1')
+      .setAttribute('src', '../../res/img/FiltroLivro.jpg')
+    document
+      .getElementById('imgCarousel2')
+      .setAttribute('src', '../../res/img/FiltroLivro.jpg')
+    document
+      .getElementById('imgCarousel3')
+      .setAttribute('src', '../../res/img/FiltroLivro.jpg')
   }
   if (paramCategoria == 'Esportes') {
-    document.getElementById('imgCarousel1').setAttribute('src','../../res/img/FiltroEsporte.jpg')
-    document.getElementById('imgCarousel2').setAttribute('src','../../res/img/FiltroEsporte.jpg')
-    document.getElementById('imgCarousel3').setAttribute('src','../../res/img/FiltroEsporte.jpg')
+    document
+      .getElementById('imgCarousel1')
+      .setAttribute('src', '../../res/img/FiltroEsporte.jpg')
+    document
+      .getElementById('imgCarousel2')
+      .setAttribute('src', '../../res/img/FiltroEsporte.jpg')
+    document
+      .getElementById('imgCarousel3')
+      .setAttribute('src', '../../res/img/FiltroEsporte.jpg')
   }
   if (paramCategoria == 'Serviços') {
-    document.getElementById('imgCarousel1').setAttribute('src','../../res/img/FiltroServico.jpg')
-    document.getElementById('imgCarousel2').setAttribute('src','../../res/img/FiltroServico.jpg')
-    document.getElementById('imgCarousel3').setAttribute('src','../../res/img/FiltroServico.jpg')
+    document
+      .getElementById('imgCarousel1')
+      .setAttribute('src', '../../res/img/FiltroServico.jpg')
+    document
+      .getElementById('imgCarousel2')
+      .setAttribute('src', '../../res/img/FiltroServico.jpg')
+    document
+      .getElementById('imgCarousel3')
+      .setAttribute('src', '../../res/img/FiltroServico.jpg')
   }
   let texto = ''
   let telaProduto = document.getElementById('caixaProdutos1')
@@ -102,9 +139,9 @@ function filtroProdutos(paramCategoria) {
       produto => produto.categoria == paramCategoria
     )
     // var divNova = document.createElement(`caixaProduto${cont}`)
-    console.log(paramCategoria);
+    console.log(paramCategoria)
     filterProdutos.forEach(p => {
-      texto += `<div onclick="cliqueProduto(${p.id})" class="col-lg-3 col-md-6 col-sm-12 productCol" id="${p.id}"> <img src="../../res/img/notebook.jpeg" alt="" /> <p>${p.nome}</p> <p><strong>R$${p.preco}</strong></p></div>`
+      texto += `<div onclick="cliqueProduto(${p.id})" class="col-lg-3 col-md-6 col-sm-12 productCol" id="${p.id}"> <img src="${p.foto}" alt="" /> <p>${p.nome}</p> <p><strong>R$${p.preco}</strong></p></div>`
     })
   })
   telaProduto.innerHTML = texto
