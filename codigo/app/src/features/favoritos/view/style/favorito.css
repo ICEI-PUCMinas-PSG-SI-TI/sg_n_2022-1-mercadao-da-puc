@@ -83,11 +83,14 @@ body {
   margin: 4rem 0;
 }
 .btnRedirect {
-  margin-top: 4rem;
-  text-align: center;
+  margin: 4rem 0;
 }
 .mainContainer {
   margin: 0 3rem;
+}
+.divProduto {
+  margin-bottom: 1rem;
+  background-color: #e6e6e6;
 }
 .btnRedirect a {
   text-decoration: none;
