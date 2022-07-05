@@ -53,6 +53,7 @@ function verificarLogado() {
 function carregarInformacoes() {
   let idProduto = JSON.parse(localStorage.getItem('idProduto'))
   var usuarios = JSON.parse(localStorage.getItem('usuarios'))
+  let btnZap = document.getElementById('mandaZap')
   usuarios.forEach(user => {
     user.produtos.forEach(produto => {
       if (produto.id == idProduto) {
@@ -83,6 +84,10 @@ function carregarInformacoes() {
         document.getElementById(
           'unidadeUsuario'
         ).innerHTML = `<li class="list-group-item" id="unidadeUsuario"><strong>Unidade de estudo:</strong> ${user.unidade}</li>`
+        btnZap.setAttribute(
+          'href',
+          `https://api.whatsapp.com/send?phone=55${user.number}`
+        )
 
         //troca innerText produto
         nomeProduto.innerText = nomeProduto1
@@ -104,18 +109,7 @@ let addFav = document.getElementById('addFav')
 let favoritos = document.getElementById('favoritos')
 let isFav = false
 let usuario = JSON.parse(localStorage.getItem('usuarios'))
-let btnZap = document.getElementById('mandaZap')
 
-window.onload = () => {
-  for (let i = 0; i < usuario.length; i++) {
-    if (usuario[i].logado) {
-      btnZap.setAttribute(
-        'href',
-        `https://api.whatsapp.com/send?phone=55${usuario[i].number}`
-      )
-    }
-  }
-}
 addFav.addEventListener('click', () => {
   var produtoFav
   let idProduto = JSON.parse(localStorage.getItem('idProduto'))

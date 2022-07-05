@@ -23,11 +23,11 @@ function exibirFavoritos() {
     if (user.logado) {
       user.produtosFavoritos.forEach(produto => {
         tela.innerHTML += `
-        
+            <div class="row divProduto">
             <div class="col-lg-4 col-md-6 col-sm-6">
               <img class="imgProduto" src="${produto.foto}" />
             </div>
-            <div class="col-lg-8 col-md-6 col-sm-6">
+            <div class="col-lg-8 col-md-6 col-sm-6 text-left">
               <h2>${produto.nome}</h2>
               <p>
                 ${produto.descricao}
@@ -35,6 +35,7 @@ function exibirFavoritos() {
               <div " class="btnRedirect">
                 <a id="${produto.id} onclick="handleSetIdProduct(${this.id})" href="../../../informaçõesProduto/view/htmls/info.html">Página do produto</a>
               </div>
+            </div>
             </div>
           
         `
