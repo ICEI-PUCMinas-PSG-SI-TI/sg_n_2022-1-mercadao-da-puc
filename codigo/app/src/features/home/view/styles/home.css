@@ -24,7 +24,7 @@ body {
 }
 .logo img {
   width: 100%;
-  max-width: 100px;
+  max-width: 270px;
 }
 .formSearch {
   width: 100%;
@@ -37,6 +37,7 @@ body {
   color: #000 !important;
   font-size: 1rem !important;
 }
+
 .loginDiv:hover {
   color: #dc3545;
 }
