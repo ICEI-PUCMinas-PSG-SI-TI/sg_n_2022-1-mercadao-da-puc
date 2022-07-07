@@ -11,6 +11,9 @@
 .header {
   justify-content: space-between;
 }
+.logo {
+  width: 80%;
+}
 
 .segundaDiv {
   flex-grow: 2;
@@ -103,7 +106,7 @@ body {
   margin-left: auto;
 }
 
-.checkbox{
+.checkbox {
   display: block;
   margin-right: auto;
   margin-left: auto;
