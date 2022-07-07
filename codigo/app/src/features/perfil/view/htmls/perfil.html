@@ -32,7 +32,7 @@
       <div class="d-flex p-2 flex-row align-items-center header">
         <div class="p-2 logo">
           <a href="../../../home/view/htmls/home.html"
-            ><img src="../../../../communs/res/img/PUC2.png" alt="LOGO" />
+            ><img src="../../../../features/home/res/img/Mercadão Puc Minas.png" alt="LOGO" />
           </a>
         </div>
         <div class="p-2 segundaDiv">
@@ -49,7 +49,7 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <form class="d-flex formSearch">
+              <!-- <form class="d-flex formSearch">
                 <input
                   class="buttonSearch form-control me-2 searchBox"
                   id="searchInput"
@@ -65,7 +65,7 @@
                   >
                     <i class="fa-solid fa-magnifying-glass"></i></button
                 ></a>
-              </form>
+              </form> -->
               <ul class="navbar-nav mb-2 mb-lg-0 lista">
                 <li class="nav-item loginDiv">
                   <a
@@ -82,7 +82,9 @@
                   ></a>
                 </li>
                 <li class="nav-item favDiv">
-                  <a href="#" class="favoritos"
+                  <a
+                    href="../../../favoritos/view/html/favorito.html"
+                    class="favoritos"
                     ><span><i class="fa-solid fa-star"></i> Favoritos</span></a
                   >
                 </li>
@@ -92,25 +94,39 @@
         </div>
       </div>
       <div class="row">
-        <nav class="col-12">
-          <ul class="nav menu justify-content-center">
+        <nav class="col-12" id="nav">
+          <div class="menuMobile">
+            <button
+              aria-label="Abrir menu"
+              id="btnMobile"
+              aria-expanded="false"
+              aria-controls="menu"
+            >
+              Categorias
+              <span id="hamburger"></span>
+            </button>
+          </div>
+          <ul class="nav menu justify-content-center" id="menuCategoria">
             <li class="nav-item">
-              <a class="nav-link" href="#">Roupas</a>
+              <a class="nav-link" href="../../../home/view/htmls/home.html">Todos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Eletrônicos</a>
+              <a class="nav-link" href="../../../home/view/htmls/home.html">Roupas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Acessórios</a>
+              <a class="nav-link" href="../../../home/view/htmls/home.html">Eletrônicos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Livros</a>
+              <a class="nav-link" href="../../../home/view/htmls/home.html">Acessórios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Esportes</a>
+              <a class="nav-link" href="../../../home/view/htmls/home.html">Livros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Aulas particulares</a>
+              <a class="nav-link" href="../../../home/view/htmls/home.html">Esportes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../home/view/htmls/home.html">Aulas particulares</a>
             </li>
             <li class="nav-item">
               <a

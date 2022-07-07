@@ -10,11 +10,30 @@ let descricaoProduto = document.getElementById('descricao')
 let labelCadastre = document.getElementById('cadastre-se')
 let labelNomeLogado = document.getElementById('nome_user')
 var isLogado = false
+const btnMobile = document.getElementById('btnMobile')
+btnMobile.addEventListener('click', toggleMenu)
+btnMobile.addEventListener('touchstart', toggleMenu)
+
+function toggleMenu(event) {
+  if (event.type === 'touchstart') {
+    event.preventDefault()
+  }
+  const nav = document.getElementById('nav')
+  nav.classList.toggle('active')
+  const active = nav.classList.contains('active')
+  event.currentTarget.setAttribute('aria-expanded', active)
+  if (active) {
+    event.currentTarget.setAttribute('aria-label', 'Fechar menu')
+  } else {
+    event.currentTarget.setAttribute('aria-label', 'Abrir menu')
+  }
+}
 
 function iniciarTela() {
   verificarLogado()
   carregarInformacoes()
 }
+iniciarTela()
 
 function verificarLogado() {
   if (localStorage.getItem('usuarios') == null) {
@@ -34,10 +53,12 @@ function verificarLogado() {
 function carregarInformacoes() {
   let idProduto = JSON.parse(localStorage.getItem('idProduto'))
   var usuarios = JSON.parse(localStorage.getItem('usuarios'))
+  let btnZap = document.getElementById('mandaZap')
   usuarios.forEach(user => {
     user.produtos.forEach(produto => {
       if (produto.id == idProduto) {
         // dados usuario
+        console.log(produto)
         let nomeUsuario = user.nome
         let emailUsuario = user.email
         let pix = user.pix
@@ -63,6 +84,10 @@ function carregarInformacoes() {
         document.getElementById(
           'unidadeUsuario'
         ).innerHTML = `<li class="list-group-item" id="unidadeUsuario"><strong>Unidade de estudo:</strong> ${user.unidade}</li>`
+        btnZap.setAttribute(
+          'href',
+          `https://api.whatsapp.com/send?phone=55${user.number}`
+        )
 
         //troca innerText produto
         nomeProduto.innerText = nomeProduto1
@@ -72,7 +97,102 @@ function carregarInformacoes() {
         estadoProduto.innerText = estadoProduto1
         // quantidadeProduto.innerText = quantidadeDoProduto1 + ' restantes'
         descricaoProduto.innerText = descricaoProduto1
+        document.getElementById('fotoProduto').setAttribute('src', produto.foto)
       }
     })
   })
 }
+// FAVORITOS
+
+let heartFav = document.getElementById('heartFav')
+let addFav = document.getElementById('addFav')
+let favoritos = document.getElementById('favoritos')
+let isFav = false
+let usuario = JSON.parse(localStorage.getItem('usuarios'))
+
+addFav.addEventListener('click', () => {
+  var produtoFav
+  let idProduto = JSON.parse(localStorage.getItem('idProduto'))
+  var usuarios = JSON.parse(localStorage.getItem('usuarios'))
+  if (isFav == false) {
+    usuarios.forEach(user => {
+      user.produtos.forEach(produto => {
+        if (produto.id == idProduto) {
+          produtoFav = produto
+        }
+      })
+    })
+
+    addFav.innerText = 'Remover dos favoritos'
+    heartFav.classList.remove('fa-regular')
+    heartFav.classList.add('fa-solid')
+    for (let i = 0; i < usuario.length; i++) {
+      if (usuario[i].logado) {
+        usuario[i].produtosFavoritos[usuario[i].produtosFavoritos.length] =
+          produtoFav
+      }
+    }
+    localStorage.setItem('usuarios', JSON.stringify(usuario))
+    isFav = true
+  } else {
+    addFav.innerText = 'Adicionar aos favoritos'
+    heartFav.classList.remove('fa-solid')
+    heartFav.classList.add('fa-regular')
+    for (let i = 0; i < usuario.length; i++) {
+      let produtoIdPagina = localStorage.getItem('idProduto')
+      if (usuario[i].logado) {
+        for (let j = 0; j < usuario[i].produtosFavoritos[j].length; j++) {
+          if (usuario[i].produtosFavoritos[j] == produtoIdPagina) {
+            console.log(j)
+            console.log(usuario[i].produtosFavoritos)
+            usuario[i].produtosFavoritos[j].splice(j, 1, 'exfav')
+          }
+        }
+      }
+    }
+    localStorage.setItem('usuarios', JSON.stringify(usuario))
+    isFav = false
+  }
+})
+heartFav.addEventListener('click', () => {
+  var produtoFav
+  let idProduto = JSON.parse(localStorage.getItem('idProduto'))
+  var usuarios = JSON.parse(localStorage.getItem('usuarios'))
+  if (isFav == false) {
+    usuarios.forEach(user => {
+      user.produtos.forEach(produto => {
+        if (produto.id == idProduto) {
+          produtoFav = produto
+        }
+      })
+    })
+
+    addFav.innerText = 'Remover dos favoritos'
+    heartFav.classList.remove('fa-regular')
+    heartFav.classList.add('fa-solid')
+    for (let i = 0; i < usuario.length; i++) {
+      if (usuario[i].logado) {
+        usuario[i].produtosFavoritos[usuario[i].produtosFavoritos.length] =
+          produtoFav
+      }
+    }
+    localStorage.setItem('usuarios', JSON.stringify(usuario))
+    isFav = true
+  } else {
+    addFav.innerText = 'Adicionar aos favoritos'
+    heartFav.classList.remove('fa-solid')
+    heartFav.classList.add('fa-regular')
+    for (let i = 0; i < usuario.length; i++) {
+      let produtoIdPagina = localStorage.getItem('idProduto')
+      if (usuario[i].logado) {
+        for (let j = 0; j < usuario[i].produtosFavoritos[j].length; j++) {
+          if (usuario[i].produtosFavoritos[j] == produtoIdPagina) {
+            usuario[i].produtosFavoritos[j].splice(produtoIdPagina, 1)
+          }
+        }
+      }
+    }
+    localStorage.setItem('usuarios', JSON.stringify(usuario))
+    isFav = false
+  }
+})

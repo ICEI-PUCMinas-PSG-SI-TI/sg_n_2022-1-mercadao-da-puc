@@ -22,9 +22,13 @@ body {
 .btnSearch {
   margin: -5px;
 }
+
+.logo {
+  width: 80%;
+}
 .logo img {
   width: 100%;
-  max-width: 100px;
+  max-width: 270px;
 }
 .formSearch {
   width: 100%;
@@ -37,6 +41,7 @@ body {
   color: #000 !important;
   font-size: 1rem !important;
 }
+
 .loginDiv:hover {
   color: #dc3545;
 }
@@ -112,6 +117,9 @@ body {
   background-color: #120e27f8;
   color: white;
   padding: 10px 0px;
+}
+.pContatos a {
+  color: rgb(189, 39, 39);
 }
 
 @media screen and (max-width: 768px) {
