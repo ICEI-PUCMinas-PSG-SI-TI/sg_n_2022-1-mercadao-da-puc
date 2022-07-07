@@ -14,6 +14,7 @@ body {
 }
 .header {
   justify-content: space-between;
+  background-color: #dc3545;
 }
 
 .segundaDiv {
@@ -38,7 +39,7 @@ body {
 }
 .login {
   text-decoration: none;
-  color: #000 !important;
+  color: #fff !important;
   font-size: 1rem !important;
 }
 
@@ -47,7 +48,7 @@ body {
 }
 .logado {
   text-decoration: none;
-  color: #000 !important;
+  color: #fff !important;
   font-size: 1rem !important;
 }
 .logado:hover {
@@ -62,7 +63,7 @@ body {
 
 .favoritos {
   text-decoration: none;
-  color: #000 !important;
+  color: #fff !important;
   font-size: 1rem !important;
 }
 #btnMobile {
@@ -120,6 +121,10 @@ body {
 }
 .pContatos a {
   color: rgb(189, 39, 39);
+}
+footer {
+  background-color: #120e27f8;
+  color: white;
 }
 
 @media screen and (max-width: 768px) {

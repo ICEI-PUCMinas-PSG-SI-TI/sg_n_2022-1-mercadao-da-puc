@@ -142,10 +142,12 @@ addFav.addEventListener('click', () => {
       let produtoIdPagina = localStorage.getItem('idProduto')
       if (usuario[i].logado) {
         for (let j = 0; j < usuario[i].produtosFavoritos[j].length; j++) {
-          if (usuario[i].produtosFavoritos[j] == produtoIdPagina) {
-            console.log(j)
-            console.log(usuario[i].produtosFavoritos)
-            usuario[i].produtosFavoritos[j].splice(j, 1, 'exfav')
+          if (usuario[i].produtosFavoritos[j].id == produtoIdPagina) {
+            usuario[i].produtosFavoritos = usuario[i].produtosFavoritos.filter(
+              () => {
+                return usuario[i].produtosFavoritos.id != produtoIdPagina
+              }
+            )
           }
         }
       }
@@ -186,8 +188,12 @@ heartFav.addEventListener('click', () => {
       let produtoIdPagina = localStorage.getItem('idProduto')
       if (usuario[i].logado) {
         for (let j = 0; j < usuario[i].produtosFavoritos[j].length; j++) {
-          if (usuario[i].produtosFavoritos[j] == produtoIdPagina) {
-            usuario[i].produtosFavoritos[j].splice(produtoIdPagina, 1)
+          if (usuario[i].produtosFavoritos[j].id == produtoIdPagina) {
+            usuario[i].produtosFavoritos = usuario[i].produtosFavoritos.filter(
+              () => {
+                return usuario[i].produtosFavoritos.id != produtoIdPagina
+              }
+            )
           }
         }
       }
