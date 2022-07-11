@@ -49,13 +49,18 @@ function cadastrarProduto() {
 
 window.addEventListener('load', function (event) {
   var usuarios = JSON.parse(localStorage.getItem('usuarios'))
+  let telaProduto = document.getElementById('caixaProdutos1')
+  let contador0 = 0
   usuarios.forEach(user => {
+    contador0 += user.produtos.length
     user.produtos.forEach(produto => {
       // var divNova = document.createElement(`caixaProduto${cont}`)
-      let telaProduto = document.getElementById('caixaProdutos1')
       telaProduto.innerHTML += `<div onclick="cliqueProduto(${produto.id})" class="col-lg-3 col-md-6 col-sm-12 productCol" id="${produto.id}"> <img src="${produto.foto}" alt="" /> <p>${produto.nome}</p> <p><strong>R$${produto.preco}</strong></p></div>`
     })
   })
+  if (contador0 == 0) {
+    telaProduto.innerHTML += `<div class="col-lg-12 col-md-12 col-sm-12 productCol" id=""><p><strong>Não temos produtos cadastrados ainda!</strong></p></div>`
+  }
 })
 function cliqueProduto(idProduto) {
   localStorage.setItem('idProduto', JSON.stringify(idProduto))
@@ -133,16 +138,21 @@ function filtroProdutos(paramCategoria) {
   let texto = ''
   let telaProduto = document.getElementById('caixaProdutos1')
   var usuarios = JSON.parse(localStorage.getItem('usuarios'))
+  let contador1 = 0
   usuarios.forEach(user => {
     let filterProdutos = []
     filterProdutos = user.produtos.filter(
       produto => produto.categoria == paramCategoria
     )
+    contador1 += filterProdutos.length
     // var divNova = document.createElement(`caixaProduto${cont}`)
     console.log(paramCategoria)
     filterProdutos.forEach(p => {
       texto += `<div onclick="cliqueProduto(${p.id})" class="col-lg-3 col-md-6 col-sm-12 productCol" id="${p.id}"> <img src="${p.foto}" alt="" /> <p>${p.nome}</p> <p><strong>R$${p.preco}</strong></p></div>`
     })
   })
+  if (contador1 == 0) {
+    texto += `<div class="col-lg-12 col-md-12 col-sm-12 productCol" id=""><p><strong>Não temos produtos cadastrados ainda!</strong></p></div>`
+  }
   telaProduto.innerHTML = texto
 }
