@@ -59,7 +59,7 @@ window.addEventListener('load', function (event) {
     })
   })
   if (contador0 == 0) {
-    telaProduto.innerHTML += `<div class="col-lg-12 col-md-12 col-sm-12 productCol" id=""><p><strong>Não temos produtos cadastrados ainda!</strong></p></div>`
+    telaProduto.innerHTML += `<div class="col-lg-12 col-md-12 col-sm-12 productCol" id=""><p><strong>Não existem produtos cadastrados ainda!</strong></p></div>`
   }
 })
 function cliqueProduto(idProduto) {
@@ -152,7 +152,7 @@ function filtroProdutos(paramCategoria) {
     })
   })
   if (contador1 == 0) {
-    texto += `<div class="col-lg-12 col-md-12 col-sm-12 productCol" id=""><p><strong>Não temos produtos cadastrados ainda!</strong></p></div>`
+    texto += `<div class="col-lg-12 col-md-12 col-sm-12 productCol" id=""><p><strong>Não existem produtos cadastrados ainda!</strong></p></div>`
   }
   telaProduto.innerHTML = texto
 }
