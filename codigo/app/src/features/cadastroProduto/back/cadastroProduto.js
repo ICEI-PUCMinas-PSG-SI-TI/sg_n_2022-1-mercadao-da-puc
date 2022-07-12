@@ -2,8 +2,28 @@ const API_KEY = '563492ad6f91700001000001af55cf3aad414e3184905c9992cbbb28'
 
 let labelCadastre = document.getElementById('cadastre-se')
 let labelNomeLogado = document.getElementById('nome_user')
+var isLogado = false
+const btnMobile = document.getElementById('btnMobile')
 
-const tela = document.getElementById('divFav')
+// All requests made with the client will be authenticated
+
+btnMobile.addEventListener('click', toggleMenu)
+btnMobile.addEventListener('touchstart', toggleMenu)
+
+function toggleMenu(event) {
+  if (event.type === 'touchstart') {
+    event.preventDefault()
+  }
+  const nav = document.getElementById('nav')
+  nav.classList.toggle('active')
+  const active = nav.classList.contains('active')
+  event.currentTarget.setAttribute('aria-expanded', active)
+  if (active) {
+    event.currentTarget.setAttribute('aria-label', 'Fechar menu')
+  } else {
+    event.currentTarget.setAttribute('aria-label', 'Abrir menu')
+  }
+}
 
 function verificarLogado() {
   if (localStorage.getItem('usuarios') == null) {
