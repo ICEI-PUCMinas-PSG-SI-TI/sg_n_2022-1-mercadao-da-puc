@@ -21,6 +21,10 @@ body {
   height: 8rem;
   resize: none;
 }
+.header {
+  justify-content: space-between;
+  background-color: #dc3545;
+}
 
 .segundaDiv {
   flex-grow: 2;
@@ -28,9 +32,12 @@ body {
 .btnSearch {
   margin: -5px;
 }
+.logo {
+  width: 80%;
+}
 .logo img {
   width: 100%;
-  max-width: 100px;
+  max-width: 360px;
 }
 .formSearch {
   width: 100%;
@@ -48,7 +55,12 @@ body {
 }
 .logado {
   text-decoration: none;
-  color: #000 !important;
+  color: rgb(255, 255, 255) !important;
+  font-size: 1rem !important;
+}
+.favoritos {
+  text-decoration: none;
+  color: rgb(255, 255, 255) !important;
   font-size: 1rem !important;
 }
 .logado:hover {
@@ -61,11 +73,6 @@ body {
   justify-content: space-between;
 }
 
-.favoritos {
-  text-decoration: none;
-  color: #000 !important;
-  font-size: 1rem !important;
-}
 #btnMobile {
   display: none;
 }

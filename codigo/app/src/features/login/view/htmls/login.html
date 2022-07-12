@@ -25,24 +25,17 @@
   </head>
   <body>
         <header class="container-fluid headerContainer">
+          <div class="d-flex p-2 flex-row align-items-center header">
           <div class="row">
             <div class="col-lg-1 col-md-2 logo">
             <a href="../../../home/view/htmls/home.html"> <img src="../../../../communs/res/img/PUC2.png" alt="LOGO" /></a>
             </div>
            
-          
-              <div class="col-lg-1 col-md-4 loginDiv">
-                <a href="../../../cadastro/view/htmls/cadastro.html" id ="cadastre-se" class="login"><span> Cadastre-se</span></a>
-                <a href="#" id="nome_user"><span></span></a>
-              </div>
-              <div class="col-lg-2 col-md-4 comprasDiv">
-                <a href="#" class="compras"><span><i class="fa-solid fa-star"></i> Favoritos</span></a>
-              </div>  
               
             </div>
           </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <nav class="col-12">
                 <ul class="nav menu justify-content-center">
                   <li class="nav-item">
@@ -72,12 +65,15 @@
                   </li>
           </ul>
         </nav>
-      </div>
+      </div> -->
+    </div>
     </header>
 
-
+    <div class="container">
+ 
 <form class="form-horizontal" action="/action_page.php" >
-  <div class="form-group" style="text-align: center; ">
+  <div class="form-group textLogin" style="text-align: center; ">
+         <h2>Login</h2>
     <label class="control-label col-sm-2" for="email" >Email:</label>
     <div class="col-sm-8" >
       <input type="email" class="form-control" id="emailLogin" placeholder="Digite o email " >
@@ -119,6 +115,7 @@
   
 
 </form>
+</div>
 
   
 <script>
@@ -130,7 +127,16 @@ $(document).ready(function(){
 </div>
 
 
-
+<!-- <footer class="container-fluid footerCopyright">
+  <div class="row">
+    <div class="col-12">
+      <h3>
+        COPYRIGHT © TODOS OS DIREITOS RESERVADOS PUC MINAS SISTEMAS DE
+        INFORMAÇÃO
+      </h3>
+    </div>
+  </div>
+</footer> -->
 
 
     <script>

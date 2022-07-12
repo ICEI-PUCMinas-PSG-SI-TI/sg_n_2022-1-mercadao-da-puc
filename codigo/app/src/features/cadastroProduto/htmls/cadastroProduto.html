@@ -22,15 +22,16 @@
     crossorigin="anonymous"
   ></script>
   <link rel="icon" type="image/x-icon" href="../../../communs/res/img/PUC2.png">  </head>
-  <body>
+  <body onload="verificarLogado()">
         <header class="container-fluid headerContainer">
+          <div class="d-flex p-2 flex-row align-items-center header">
           <div class="row">
             <div class="col-lg-1 col-md-2 logo">
-              <a href="../../home/view/htmls/home.html"> <img src="../../../communs/res/img/PUC2.png"" alt="LOGO" /></a>
+              <a href="../../home/view/htmls/home.html"> <img src="../../../communs/res/img/PUC2.png" alt="LOGO" /></a>
             </div>
             
           
-              <div class="col-lg-1 col-md-4 loginDiv">
+            <div class="col-lg-1 col-md-4 loginDiv">
                 <a href="../../../cadastro/view/htmls/cadastro.html" id ="cadastre-se" class="login"><span> Cadastre-se</span></a>
                 <a href="#" id="nome_user"><span></span></a>
               </div>
@@ -41,7 +42,7 @@
             </div>
           </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <nav class="col-12">
                 <ul class="nav menu justify-content-center">
                   <li class="nav-item">
@@ -71,7 +72,8 @@
                   </li>
           </ul>
         </nav>
-      </div>
+      </div> -->
+    </div>
     </header>
 
 
@@ -161,6 +163,7 @@
 
 </div><br>
 
+<script src="../back/cadastroProduto.js"></script>
 <script src="../back/cadastroProduto.js"></script>
 
     <script>

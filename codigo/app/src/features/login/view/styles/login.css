@@ -15,6 +15,7 @@ body {
 }
 .header {
   justify-content: space-between;
+  background-color: #dc3545;
 }
 
 .segundaDiv {
@@ -28,9 +29,12 @@ body {
 .btnSearch {
   margin: -5px;
 }
+.logo {
+  width: 80%;
+}
 .logo img {
   width: 100%;
-  max-width: 100px;
+  max-width: 360px;
 }
 .formSearch {
   width: 100%;
@@ -65,6 +69,9 @@ body {
   text-decoration: none;
   color: #000 !important;
   font-size: 1rem !important;
+}
+.textLogin{
+  margin-top: 100px;
 }
 #btnMobile {
   display: none;
@@ -118,6 +125,7 @@ body {
   background-color: #120e27f8;
   color: white;
   padding: 10px 0px;
+  position: absolute;
 }
 .pContatos a{
   color: rgb(189, 39, 39);

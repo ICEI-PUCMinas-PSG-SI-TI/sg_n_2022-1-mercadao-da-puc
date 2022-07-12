@@ -15,9 +15,11 @@ body {
 }
 .header {
   justify-content: space-between;
+  background-color: #dc3545;
 }
 .logo {
   width: 80%;
+  text-align: center;
 }
 
 .segundaDiv {
@@ -33,7 +35,8 @@ body {
 }
 .logo img {
   width: 100%;
-  max-width: 100px;
+  max-width: 360px;
+ 
 }
 .formSearch {
   width: 100%;

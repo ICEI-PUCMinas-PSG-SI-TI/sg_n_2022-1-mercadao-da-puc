@@ -111,7 +111,7 @@ body {
   padding: 20px 10px;
 }
 .SobreRow {
-  color: rgb(189, 39, 39);
+  color: rgb(5, 3, 3);
 }
 .footerCopyright {
   text-align: center;
@@ -120,7 +120,7 @@ body {
   padding: 10px 0px;
 }
 .pContatos a {
-  color: rgb(189, 39, 39);
+  color: rgb(12, 5, 5);
 }
 
 @media screen and (max-width: 768px) {

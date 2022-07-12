@@ -1,5 +1,24 @@
 const API_KEY = '563492ad6f91700001000001af55cf3aad414e3184905c9992cbbb28'
 
+let labelCadastre = document.getElementById('cadastre-se')
+let labelNomeLogado = document.getElementById('nome_user')
+
+const tela = document.getElementById('divFav')
+
+function verificarLogado() {
+  if (localStorage.getItem('usuarios') == null) {
+    alert('Usuário nao registrado ')
+  } else {
+    var usuarios = JSON.parse(localStorage.getItem('usuarios'))
+    usuarios.forEach(user => {
+      if (user.logado == true) {
+        isLogado = true
+        labelCadastre.style.display = 'none'
+        labelNomeLogado.innerHTML = user.nome
+      }
+    })
+  }
+}
 async function getImg(query) {
   const baseURL = `https://api.pexels.com/v1/search?query=${query}`
   const response = await fetch(baseURL, {

@@ -131,6 +131,18 @@ body {
   color: white;
   padding: 5px;
 }
+#nomeUsuario{
+  background-color: #d1e1ebf8;
+}
+#emailUsuario{
+  background-color: #d1e1ebf8;
+}
+ #pixUsuario{
+  background-color: #d1e1ebf8;
+ }
+  #unidadeUsuario{
+    background-color: #d1e1ebf8;
+  }
 @media screen and (max-width: 768px) {
   .segundaDiv {
     flex-grow: 0;

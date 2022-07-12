@@ -14,6 +14,7 @@ body {
 }
 .header {
   justify-content: space-between;
+  background-color: #dc3545;
 }
 
 .segundaDiv {
@@ -42,7 +43,7 @@ body {
 }
 .logado {
   text-decoration: none;
-  color: #000 !important;
+  color: rgb(255, 255, 255) !important;
   font-size: 1rem !important;
 }
 .logado:hover {
@@ -57,7 +58,7 @@ body {
 
 .favoritos {
   text-decoration: none;
-  color: #000 !important;
+  color: rgb(255, 255, 255) !important;
   font-size: 1rem !important;
 }
 #btnMobile {
