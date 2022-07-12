@@ -5,6 +5,10 @@
 body {
   background-color: #f7f7f7f8;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 .headerContainer {
   margin: 10px;
@@ -71,6 +75,7 @@ body {
 }
 
 .menu {
+  margin-top: 1rem;
   min-width: 100%;
 }
 .menu a {
@@ -87,6 +92,7 @@ body {
 }
 .recentes {
   text-align: center;
+  margin: 2rem 0 8rem;
 }
 .productRow img {
   width: 100%;
@@ -98,8 +104,17 @@ body {
 .productRow p {
   text-align: center;
 }
+.productCol {
+  margin: 4rem 0 8rem;
+  text-align: center;
+}
+.productCol img {
+  min-width: 300px;
+  max-width: 400px;
+}
 .productCol p {
   color: rgb(51, 45, 71);
+  font-size: 1.3rem;
 }
 .titulo {
   text-align: center;

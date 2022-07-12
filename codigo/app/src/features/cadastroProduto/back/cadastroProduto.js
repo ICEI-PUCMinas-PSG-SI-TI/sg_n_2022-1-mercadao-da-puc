@@ -3,12 +3,8 @@ const API_KEY = '563492ad6f91700001000001af55cf3aad414e3184905c9992cbbb28'
 let labelCadastre = document.getElementById('cadastre-se')
 let labelNomeLogado = document.getElementById('nome_user')
 var isLogado = false
-const btnMobile = document.getElementById('btnMobile')
 
 // All requests made with the client will be authenticated
-
-btnMobile.addEventListener('click', toggleMenu)
-btnMobile.addEventListener('touchstart', toggleMenu)
 
 function verificarLogado() {
   if (localStorage.getItem('usuarios') == null) {
@@ -34,6 +30,11 @@ async function getImg(query) {
     }
   })
   const data = await response.json()
+  console.log(data)
+  console.log(data.photos.length)
+  if (data.photos.length == 0) {
+    return `https://source.unsplash.com/${query}`
+  }
   return data.photos[0].src.original
 }
 

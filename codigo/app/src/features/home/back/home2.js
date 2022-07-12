@@ -152,7 +152,11 @@ function filtroProdutos(paramCategoria) {
     })
   })
   if (contador1 == 0) {
-    texto += `<div class="col-lg-12 col-md-12 col-sm-12 productCol" id=""><p><strong>Não existem produtos cadastrados ainda!</strong></p></div>`
+    texto += `<div class="col-lg-12 col-md-12 col-sm-12 productCol" id="">
+    <p><strong>Não existem produtos cadastrados ainda!</strong></p>
+    <img class="triste" src= "../../res/img/triste.png" alt="Sorriso"/>
+    
+    </div>`
   }
   telaProduto.innerHTML = texto
 }
