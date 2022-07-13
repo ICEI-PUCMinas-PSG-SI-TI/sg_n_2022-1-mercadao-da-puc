@@ -19,14 +19,18 @@ Além da proposta de poder anunciar os produtos, os usuários que estiverem em n
 * Henrique resende da fonseca alves -> Realizou grande parte do html/css das páginas, além de auxiliar em melhorias gerias no site
 * Lucca de Oliveira Filizzola -> Liderança,Cadastro/Login de usuário e melhorias gerais no site
 * Matheus Pereira -> Cadastro de produtos e pesquisa(filtro)
+## Link para o site
+
+* https://icei-pucminas-psg-si-ti.github.io/sg_n_2022-1-mercadao-da-puc/
+
 
 ## Link do vídeo
 
-*https://drive.google.com/file/d/1N1dFCOPtNiX1H-hFFaKiUhnLfuOo6gXo/view
+* https://drive.google.com/file/d/1N1dFCOPtNiX1H-hFFaKiUhnLfuOo6gXo/view
 
 ## Instrução para início dos Testes
 
-*Os testes devem começar atrávés da tela home.html, no canto superior direito da tela vai ter opção de criar conta, e após criar a conta o usuário vai poder registrar produtos
+* Os testes devem começar atrávés da tela home.html, no canto superior direito da tela vai ter opção de criar conta, e após criar a conta o usuário vai poder registrar produtos
 
 
 
@@ -36,5 +40,5 @@ Além da proposta de poder anunciar os produtos, os usuários que estiverem em n
 * Marta Noronha
 
 ## link do jira
-*https://puc2022.atlassian.net/jira/software/projects/MP2/boards/1/backlog?sprintCompleted
+* https://puc2022.atlassian.net/jira/software/projects/MP2/boards/1/backlog?sprintCompleted
 
