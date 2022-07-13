@@ -25,7 +25,6 @@ function toggleMenu(event) {
 
 function verificarLogado() {
   if (localStorage.getItem('usuarios') == null) {
-    alert('Usuário nao registrado ')
   } else {
     var usuarios = JSON.parse(localStorage.getItem('usuarios'))
     usuarios.forEach(user => {
