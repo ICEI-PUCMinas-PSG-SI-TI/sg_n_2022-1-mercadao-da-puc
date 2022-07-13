@@ -22,6 +22,7 @@ Além da proposta de poder anunciar os produtos, os usuários que estiverem em n
 
 ## Link do vídeo
 
+*https://drive.google.com/file/d/1N1dFCOPtNiX1H-hFFaKiUhnLfuOo6gXo/view
 
 ## Instrução para início dos Testes
 
