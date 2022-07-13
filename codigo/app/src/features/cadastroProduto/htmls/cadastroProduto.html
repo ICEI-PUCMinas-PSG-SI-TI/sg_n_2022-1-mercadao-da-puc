@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="icon" type="image/x-icon" href="../../../communs/res/img/PUC2.png">
+  <title>Mercadão</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../styles/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../../home/view/htmls/home.html">Mercadão PUC</a>
+    </div>
+  </div>
+</nav>
+  
+<div class="container">
+  <h2>Cadastrar Produto</h2>
+  <form id="formDescricao" method="post" >
+    <div class="form-group">
+      <label for="descricao">Nome:</label>
+      <input type="text" class="form-control" id="nome" placeholder="Digite o nome do seu produto." name="nome">
+    </div><br>
+
+    <div class="form-group">
+      <label for="descricao">Descrição:</label>
+      <textarea name="descricao" form="formDescricao" class="textarea" id="descricao" maxlength="1200" placeholder="Descreva o seu produto em até 1200 caracteres."></textarea>
+    </div><br>
+  <div class="form-group">
+      <label for="nome">Preço Desejado:</label>
+      <input type="number" class="form-control" id="preco" placeholder="Qual o preço do seu produto?" name="preco">
+    </div><br>
+  <div class="form-group">
+      <label for="nome">Categorias:</label>
+      <div class="radio">
+  <label><input type="radio" value="Roupas" id="c1" name="optCheck" checked>Roupas</label>
+</div>
+<div class="radio">
+  <label><input type="radio" value="Eletronicos" id="c2" name="optCheck">Eletronicos</label>
+</div>
+    <div class="radio">
+  <label><input type="radio" value="Acessorios" id="c3" name="optCheck">Acessorios</label>
+</div>
+    <div class="radio">
+  <label><input type="radio" value="Livros" id="c4" name="optCheck">Livros</label>
+</div>
+    <div class="radio">
+  <label><input type="radio" value="Esportes" id="c5" name="optCheck">Esportes</label>
+</div>
+<div class="radio">
+    <label><input type="radio" value="Serviços" id="c6" name="optCheck">Serviços</label>
+  </div>
+    <div class="radio">
+  <label><input type="radio" value="Outros" id="c7" name="optCheck">Outros</label>
+</div>
+    </div><br>
+    <div class="form-group">
+  <label for="campus">Qual unidade você deseja entregar o produto?:</label>
+  <select class="form-control" id="campui" onchange="atualizouUnidade()">
+    <option value="Coração Eucaristico" selected>Coração Eucaristico </option>
+    <option value="São Gabriel" >São Gabriel</option>
+    <option value="Praça da Liberdade" >Praça da Liberdade</option>
+    <option value="Barreiro" >Barreiro</option>
+    <option value="Outro" >Outro</option>
+  </select>
+</div><br>
+    <div class="form-group">
+      <label>Estado do produto:</label>
+      <label class="radio-inline"><input type="radio" name="optradio" id="e1" value="Novo" checked>Novo</label>
+      <label class="radio-inline"><input type="radio" name="optradio" id="e2" value="Semi novo">Semi novo</label>
+      <label class="radio-inline"><input type="radio" name="optradio" id="e3" value="Usado">Usado</label>
+    </div><br>
+   
+     <div class="form-group">
+      <label for="marca">Marca:</label>
+      <input type="marca" class="form-control" id="marca" placeholder="O produto possui marca?" name="marca">
+    </div><br>
+   
+    
+   
+   <div class="form-group">
+  <label for="sel1">Quantidade do produto:</label>
+  <select class="form-control" id="sel1" onchange="atualizouQuantidade()">
+    <option value="1" selected>1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+   <option value="5">5</option>
+  </select>
+</div>
+   <div class="form-group">
+ <label for="files">Adicionar foto:</label>  
+<div style="width:100px;height:100px;border:dashed 1px #ccc;" id="view_photo"><img id='output' style="height:10px, width = 100px"></div>
+<input type="file" name="files" />
+</div><br>
+
+<button type="button" class="btn btn-success" id="btnAdd">Cadastrar Produto</button>
+<br>
+ 
+  
+
+</div>
+
+<script src="../back/cadastroProduto.js"></script>
+</body>
+</html>
