@@ -24,7 +24,7 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="../../../../communs/res/img/PUC2.png"
+      href="../../../../features/home/res/img/PUC.png"
     />
     <title>Mercadão PUC</title>
   </head>
@@ -50,23 +50,6 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <form class="d-flex formSearch">
-                <input
-                  class="buttonSearch form-control me-2 searchBox"
-                  id="searchInput"
-                  type="search"
-                  placeholder="O que você procura?"
-                  aria-label="Search"
-                />
-                <a href="#"
-                  ><button
-                    class="btn btn-outline-dark btnSearch"
-                    id="btnSearch"
-                    type="button"
-                  >
-                    <i class="fa-solid fa-magnifying-glass"></i></button
-                ></a>
-              </form>
               <ul class="navbar-nav mb-2 mb-lg-0 lista">
                 <li class="nav-item loginDiv">
                   <a
@@ -92,70 +75,6 @@
           </nav>
         </div>
       </div>
-      <div class="row">
-        <nav class="col-12" id="nav">
-          <div class="menuMobile">
-            <button
-              aria-label="Abrir menu"
-              id="btnMobile"
-              aria-expanded="false"
-              aria-controls="menu"
-            >
-              Categorias
-              <span id="hamburger"></span>
-            </button>
-          </div>
-          <ul class="nav menu justify-content-center" id="menuCategoria">
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filtroProdutos('Roupas')"
-                >Roupas</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#"
-                onclick="filtroProdutos('Eletronicos')"
-                >Eletrônicos</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#"
-                onclick="filtroProdutos('Acessorios')"
-                >Acessórios</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filtroProdutos('Livros')"
-                >Livros</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filtroProdutos('Esportes')"
-                >Esportes</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filtroProdutos('Serviços')"
-                >Aulas particulares</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link btnAnunciar"
-                ><button
-                  onclick="cadastrarProduto();"
-                  type="button"
-                  class="btn btn-outline-danger btn-lg"
-                >
-                  <i class="fa-solid fa-camera-retro"></i> Anunciar
-                </button></a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
     </header>
     <main>
       <article class="container-fluid mainContainer">
@@ -163,25 +82,19 @@
           <div class="col-12 title">
             <h1>Meus produtos favoritos</h1>
           </div>
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6">
-              <img class="imgProduto" src="../../res/img/livros.jpg" />
-            </div>
-            <div class="col-lg-8 col-md-6 col-sm-6">
-              <h2>Nome do Produto</h2>
-              <p>
-                Descrição do produto: Lorem ipsum dolor, sit amet consectetur
-                adipisicing elit. Impedit nam eius deserunt nihil, magni ipsam
-                dolore cum quod consectetur sequi magnam maxime dolorum, rerum
-                nulla eum, animi dicta sit aliquam.
-              </p>
-              <div class="btnRedirect">
-                <a href="#">Página do produto</a>
-              </div>
-            </div>
-          </div>
+          <div class="row" id="divFav"></div>
         </div>
       </article>
+      <footer class="container-fluid footerCopyright">
+        <div class="row">
+          <div class="col-12">
+            <h3>
+              COPYRIGHT © TODOS OS DIREITOS RESERVADOS PUC MINAS SISTEMAS DE
+              INFORMAÇÃO
+            </h3>
+          </div>
+        </div>
+      </footer>
     </main>
 
     <script

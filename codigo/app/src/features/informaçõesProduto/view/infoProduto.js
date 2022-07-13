@@ -3,36 +3,26 @@ let precoProduto = document.getElementById('precoProduto')
 let categoriaProduto = document.getElementById('categoriaProduto')
 let entregaProduto = document.getElementById('entregaProduto')
 let estadoProduto = document.getElementById('estadoProduto')
+let heartFav = document.getElementById('heartFav')
+let addFav = document.getElementById('addFav')
+let favoritos = document.getElementById('favoritos')
+let isFav = false
+let usuario = JSON.parse(localStorage.getItem('usuarios'))
 //let marcaProduto = document.getElementById('nomeProduto')
 let quantidadeProduto = document.getElementById('quantidadeProduto')
 let descricaoProduto = document.getElementById('descricao')
-
+let favoritosFiltrado
 let labelCadastre = document.getElementById('cadastre-se')
 let labelNomeLogado = document.getElementById('nome_user')
 var isLogado = false
-const btnMobile = document.getElementById('btnMobile')
-btnMobile.addEventListener('click', toggleMenu)
-btnMobile.addEventListener('touchstart', toggleMenu)
-
-function toggleMenu(event) {
-  if (event.type === 'touchstart') {
-    event.preventDefault()
-  }
-  const nav = document.getElementById('nav')
-  nav.classList.toggle('active')
-  const active = nav.classList.contains('active')
-  event.currentTarget.setAttribute('aria-expanded', active)
-  if (active) {
-    event.currentTarget.setAttribute('aria-label', 'Fechar menu')
-  } else {
-    event.currentTarget.setAttribute('aria-label', 'Abrir menu')
-  }
-}
+let favorito = false
 
 function iniciarTela() {
   verificarLogado()
   carregarInformacoes()
+  isProductFav()
 }
+iniciarTela()
 
 function verificarLogado() {
   if (localStorage.getItem('usuarios') == null) {
@@ -49,9 +39,26 @@ function verificarLogado() {
   }
 }
 
+function isProductFav() {
+  let produtoIdPagina = localStorage.getItem('idProduto')
+  usuario.forEach(user => {
+    if (user.logado == true) {
+      user.produtosFavoritos.forEach(produto => {
+        if (produto.id == produtoIdPagina) {
+          isFav = true
+          addFav.innerText = 'Remover dos favoritos'
+          heartFav.classList.remove('fa-regular')
+          heartFav.classList.add('fa-solid')
+        }
+      })
+    }
+  })
+}
+
 function carregarInformacoes() {
   let idProduto = JSON.parse(localStorage.getItem('idProduto'))
   var usuarios = JSON.parse(localStorage.getItem('usuarios'))
+  let btnZap = document.getElementById('mandaZap')
   usuarios.forEach(user => {
     user.produtos.forEach(produto => {
       if (produto.id == idProduto) {
@@ -81,6 +88,10 @@ function carregarInformacoes() {
         document.getElementById(
           'unidadeUsuario'
         ).innerHTML = `<li class="list-group-item" id="unidadeUsuario"><strong>Unidade de estudo:</strong> ${user.unidade}</li>`
+        btnZap.setAttribute(
+          'href',
+          `https://api.whatsapp.com/send?phone=55${user.number}`
+        )
 
         //troca innerText produto
         nomeProduto.innerText = nomeProduto1
@@ -90,7 +101,97 @@ function carregarInformacoes() {
         estadoProduto.innerText = estadoProduto1
         // quantidadeProduto.innerText = quantidadeDoProduto1 + ' restantes'
         descricaoProduto.innerText = descricaoProduto1
+        document.getElementById('fotoProduto').setAttribute('src', produto.foto)
       }
     })
   })
 }
+// FAVORITOS
+
+addFav.addEventListener('click', () => {
+  var produtoFav
+  let idProduto = JSON.parse(localStorage.getItem('idProduto'))
+  var usuarios = JSON.parse(localStorage.getItem('usuarios'))
+  if (isFav == false) {
+    usuarios.forEach(user => {
+      user.produtos.forEach(produto => {
+        if (produto.id == idProduto) {
+          produtoFav = produto
+        }
+      })
+    })
+
+    addFav.innerText = 'Remover dos favoritos'
+    heartFav.classList.remove('fa-regular')
+    heartFav.classList.add('fa-solid')
+    for (let i = 0; i < usuario.length; i++) {
+      if (usuario[i].logado) {
+        usuario[i].produtosFavoritos[usuario[i].produtosFavoritos.length] =
+          produtoFav
+      }
+    }
+    localStorage.setItem('usuarios', JSON.stringify(usuario))
+    isFav = true
+  } else {
+    addFav.innerText = 'Adicionar aos favoritos'
+    heartFav.classList.remove('fa-solid')
+    heartFav.classList.add('fa-regular')
+    for (let i = 0; i < usuario.length; i++) {
+      let produtoIdPagina = localStorage.getItem('idProduto')
+      if (usuario[i].logado) {
+        favoritosFiltrado = usuario[i].produtosFavoritos.filter(
+          user => user.id != produtoIdPagina
+        )
+        usuario[i].produtosFavoritos = favoritosFiltrado
+        console.log(favoritosFiltrado)
+        console.log(usuario[i])
+      }
+    }
+
+    localStorage.setItem('usuarios', JSON.stringify(usuario))
+    isFav = false
+  }
+})
+heartFav.addEventListener('click', () => {
+  var produtoFav
+  let idProduto = JSON.parse(localStorage.getItem('idProduto'))
+  var usuarios = JSON.parse(localStorage.getItem('usuarios'))
+  if (isFav == false) {
+    usuarios.forEach(user => {
+      user.produtos.forEach(produto => {
+        if (produto.id == idProduto) {
+          produtoFav = produto
+        }
+      })
+    })
+
+    addFav.innerText = 'Remover dos favoritos'
+    heartFav.classList.remove('fa-regular')
+    heartFav.classList.add('fa-solid')
+    for (let i = 0; i < usuario.length; i++) {
+      if (usuario[i].logado) {
+        usuario[i].produtosFavoritos[usuario[i].produtosFavoritos.length] =
+          produtoFav
+      }
+    }
+    localStorage.setItem('usuarios', JSON.stringify(usuario))
+    isFav = true
+  } else {
+    addFav.innerText = 'Adicionar aos favoritos'
+    heartFav.classList.remove('fa-solid')
+    heartFav.classList.add('fa-regular')
+    for (let i = 0; i < usuario.length; i++) {
+      let produtoIdPagina = localStorage.getItem('idProduto')
+      if (usuario[i].logado) {
+        favoritosFiltrado = usuario[i].produtosFavoritos.filter(
+          user => user.id != produtoIdPagina
+        )
+        usuario[i].produtosFavoritos = favoritosFiltrado
+        console.log(favoritosFiltrado)
+        console.log(usuario[i])
+      }
+    }
+    localStorage.setItem('usuarios', JSON.stringify(usuario))
+    isFav = false
+  }
+})

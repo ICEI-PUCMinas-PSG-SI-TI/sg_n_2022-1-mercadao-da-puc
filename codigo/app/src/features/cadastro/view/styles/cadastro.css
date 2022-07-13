@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
@@ -16,20 +17,26 @@ body {
   justify-content: space-between;
   background-color: #dc3545;
 }
+.logo {
+  width: 80%;
+  text-align: center;
+}
 
 .segundaDiv {
   flex-grow: 2;
 }
+.col-sm-8 {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
 .btnSearch {
   margin: -5px;
 }
-
-.logo {
-  width: 80%;
-}
 .logo img {
   width: 100%;
-  max-width: 270px;
+  max-width: 360px;
+ 
 }
 .formSearch {
   width: 100%;
@@ -39,16 +46,15 @@ body {
 }
 .login {
   text-decoration: none;
-  color: #fff !important;
+  color: #000 !important;
   font-size: 1rem !important;
 }
-
 .loginDiv:hover {
   color: #dc3545;
 }
 .logado {
   text-decoration: none;
-  color: #fff !important;
+  color: #000 !important;
   font-size: 1rem !important;
 }
 .logado:hover {
@@ -63,7 +69,7 @@ body {
 
 .favoritos {
   text-decoration: none;
-  color: #fff !important;
+  color: #000 !important;
   font-size: 1rem !important;
 }
 #btnMobile {
@@ -87,6 +93,11 @@ body {
 }
 .recentes {
   text-align: center;
+}
+.col-sm-8 {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 .productRow img {
   width: 100%;
@@ -119,12 +130,8 @@ body {
   color: white;
   padding: 10px 0px;
 }
-.pContatos a {
+.pContatos a{
   color: rgb(189, 39, 39);
-}
-footer {
-  background-color: #120e27f8;
-  color: white;
 }
 
 @media screen and (max-width: 768px) {

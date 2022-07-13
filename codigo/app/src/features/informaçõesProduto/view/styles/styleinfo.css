@@ -18,6 +18,7 @@ body {
 
 .header {
   justify-content: space-between;
+  background-color: #80abeb;
 }
 
 .segundaDiv {
@@ -26,9 +27,12 @@ body {
 .btnSearch {
   margin: -5px;
 }
+.logo {
+  width: 80%;
+}
 .logo img {
   width: 100%;
-  max-width: 100px;
+  max-width: 270px;
 }
 .formSearch {
   width: 100%;
@@ -74,7 +78,7 @@ body {
   color: #971010;
 }
 
-.carousel-item img {
+.imgProduct {
   max-width: 60%;
   height: auto;
   max-height: 600px;
@@ -127,6 +131,18 @@ body {
   color: white;
   padding: 5px;
 }
+#nomeUsuario{
+  background-color: #d1e1ebf8;
+}
+#emailUsuario{
+  background-color: #d1e1ebf8;
+}
+ #pixUsuario{
+  background-color: #d1e1ebf8;
+ }
+  #unidadeUsuario{
+    background-color: #d1e1ebf8;
+  }
 @media screen and (max-width: 768px) {
   .segundaDiv {
     flex-grow: 0;

@@ -1,26 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <link rel="icon" type="image/x-icon" href="../../../communs/res/img/PUC2.png">
-  <title>Mercadão</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../styles/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro Produto</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/cadastroProduto.css" />
+    <script
+    src="https://kit.fontawesome.com/b139898041.js"
+    crossorigin="anonymous"
+  ></script>
+  <link rel="icon" type="image/x-icon" href="../../home/res/img/PUC.png">  </head>
+  <body onload="verificarLogado()">
+        <header class="container-fluid headerContainer">
+          <div class="d-flex p-2 flex-row align-items-center header">
+            <div class="p-2 logo">
+              <a href="../../home/view/htmls/home.html"
+                ><img
+                  src="../../../communs/res/img/PUC2.png"
+                  alt="LOGO"
+              /></a>
+            </div>
+            <div class="p-2 segundaDiv">
+              <nav class="navbar navbar-expand-lg navbar-light menu">
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mb-2 mb-lg-0 lista">
+                    <li class="nav-item loginDiv">
+                      <a
+                        href="../../../cadastro/view/htmls/cadastro.html"
+                        id="cadastre-se"
+                        class="login"
+                        ><span> Cadastre-se</span></a
+                      >
+                      <a
+                        class="logado"
+                        href="../../../perfil/view/htmls/perfil.html"
+                        id="nome_user"
+                        ><span></span
+                      ></a>
+                    </li>
+                    <li class="nav-item favDiv">
+                      <a
+                        href="../../../favoritos/view/html/favorito.html"
+                        class="favoritos"
+                        ><span><i class="fa-solid fa-star"></i> Favoritos</span></a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+    </header>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="../../home/view/htmls/home.html">Mercadão PUC</a>
-    </div>
-  </div>
-</nav>
-  
+
 <div class="container">
   <h2>Cadastrar Produto</h2>
   <form id="formDescricao" method="post" >
@@ -95,19 +150,25 @@
    <option value="5">5</option>
   </select>
 </div>
-   <div class="form-group">
- <label for="files">Adicionar foto:</label>  
-<div style="width:100px;height:100px;border:dashed 1px #ccc;" id="view_photo"><img id='output' style="height:10px, width = 100px"></div>
-<input type="file" name="files" />
+<div class="form-group pt-4">
+    <label for="files">Adicionar foto:</label>  
+    <input type="text" class="form-control" name="files" id="foto" placeholder="Digite o nome simplificado do seu produto para buscarmos uma imagem adequada para o seu produto. Ex:Computador, blusa " />
 </div><br>
 
 <button type="button" class="btn btn-success" id="btnAdd">Cadastrar Produto</button>
-<br>
+
  
   
 
-</div>
+</div><br>
 
 <script src="../back/cadastroProduto.js"></script>
-</body>
+<script src="../back/cadastroProduto.js"></script>
+
+    <script>
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    </script>
+  </body>
 </html>

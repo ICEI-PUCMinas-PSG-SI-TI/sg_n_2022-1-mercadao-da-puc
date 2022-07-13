@@ -24,7 +24,7 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="../../../../communs/res/img/PUC2.png"
+      href="../../../../features/home/res/img/PUC.png"
     />
     <title>Mercadão PUC</title>
   </head>
@@ -32,7 +32,9 @@
     <header class="container-fluid headerContainer">
       <div class="d-flex p-2 flex-row align-items-center header">
         <div class="p-2 logo">
-         <a href="./home.html"><img src="../../../../communs/res/img/PUC2.png" alt="LOGO" /></a>
+          <a href="./home.html"
+            ><img src="../../../../communs/res/img/PUC2.png" alt="LOGO"
+          /></a>
         </div>
         <div class="p-2 segundaDiv">
           <nav class="navbar navbar-expand-lg navbar-light menu">
@@ -48,23 +50,6 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <form class="d-flex formSearch">
-                <input
-                  class="buttonSearch form-control me-2 searchBox"
-                  id="searchInput"
-                  type="search"
-                  placeholder="O que você procura?"
-                  aria-label="Search"
-                />
-                <a href="#"
-                  ><button
-                    class="btn btn-outline-dark btnSearch"
-                    id="btnSearch"
-                    type="button"
-                  >
-                    <i class="fa-solid fa-magnifying-glass"></i></button
-                ></a>
-              </form>
               <ul class="navbar-nav mb-2 mb-lg-0 lista">
                 <li class="nav-item loginDiv">
                   <a
@@ -81,7 +66,9 @@
                   ></a>
                 </li>
                 <li class="nav-item favDiv">
-                  <a href="#" class="favoritos"
+                  <a
+                    href="../../../favoritos/view/html/favorito.html"
+                    class="favoritos"
                     ><span><i class="fa-solid fa-star"></i> Favoritos</span></a
                   >
                 </li>
@@ -105,22 +92,43 @@
           </div>
           <ul class="nav menu justify-content-center" id="menuCategoria">
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filtroProdutos('Roupas')">Roupas</a>
+              <a class="nav-link" href="home.html">Todos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filtroProdutos('Eletronicos')">Eletrônicos</a>
+              <a class="nav-link" href="#" onclick="filtroProdutos('Roupas')"
+                >Roupas</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filtroProdutos('Acessorios')">Acessórios</a>
+              <a
+                class="nav-link"
+                href="#"
+                onclick="filtroProdutos('Eletronicos')"
+                >Eletrônicos</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filtroProdutos('Livros')">Livros</a>
+              <a
+                class="nav-link"
+                href="#"
+                onclick="filtroProdutos('Acessorios')"
+                >Acessórios</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filtroProdutos('Esportes')">Esportes</a>
+              <a class="nav-link" href="#" onclick="filtroProdutos('Livros')"
+                >Livros</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filtroProdutos('Serviços')">Aulas particulares</a>
+              <a class="nav-link" href="#" onclick="filtroProdutos('Esportes')"
+                >Esportes</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="filtroProdutos('Serviços')"
+                >Serviços</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link btnAnunciar"
@@ -148,21 +156,24 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img
-                  src="../../res/img/carousel3.png" id="imgCarousel1"
+                  src="../../res/img/carousel3.png"
+                  id="imgCarousel1"
                   class="d-block w-100"
                   alt="..."
                 />
               </div>
               <div class="carousel-item">
                 <img
-                  src="../../res/img/carousel.png" id="imgCarousel2"
+                  src="../../res/img/carousel.png"
+                  id="imgCarousel2"
                   class="d-block w-100"
                   alt="..."
                 />
               </div>
               <div class="carousel-item">
                 <img
-                  src="../../res/img/carousel2.png" id="imgCarousel3"
+                  src="../../res/img/carousel2.png"
+                  id="imgCarousel3"
                   class="d-block w-100"
                   alt="..."
                 />
@@ -198,65 +209,33 @@
       <div class="row">
         <h1 class="recentes">Recentes</h1>
       </div>
-      <div class="row productRow" id="caixaProdutos1">
-        <!-- <div class="col-lg-3 col-md-6 col-sm-12 productCol">
-          <img src="../../res/img/notebook.jpeg" alt="" />
-          <p>Notebook ITAUTEC</p>
-          <p><strong>R$500</strong></p>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
-          <img src="../../res/img/espelho.jpeg" alt="" />
-          p>Espelho novo</p>
-          <p><strong>R$80</strong></p>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
-          <img src="../../res/img/toalhaMesa.jpg" alt="" />
-          <p>Toalha de mesa praticamente nova</p>
-          <p><strong>R$15</strong></p>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
-          <img src="../../res/img/livros.jpg" alt="" />
-          <p>Coleção livros Percy Jackson</p>
-          <p><strong>R$150</strong></p>
-        </div> -->
-      </div>
-      <div class="row productRow">
-        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
-          <img src="../../res/img/moto.jpeg" alt="" />
-          <p>Fazer 2011</p>
-          <p><strong>R$7.000</strong></p>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
-          <img src="../../res/img/vestidoRosa.jpg" alt="" />
-          <p>Vestido rosa</p>
-          <p><strong>R$50</strong></p>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
-          <img src="../../res/img/iPhone.jpg" alt="" />
-          <p>iPhone 8 Plus 128gb</p>
-          <p><strong>R$2.300</strong></p>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 productCol">
-          <img src="../../res/img/gabineteMusical.jpg" alt="" />
-          <p>Gabinete musical</p>
-          <p><strong>R$250</strong></p>
-        </div>
-      </div>
+      <div class="row productRow" id="caixaProdutos1"></div>
+
       <article class="row SobreRow">
         <div class="col sobreCol">
           <h2 class="titulo">Sobre</h2>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci
-            eius vitae sit libero rem dicta amet esse error saepe iste quas cum
-            quo reprehenderit dolorum sapiente, doloremque fuga neque eligendi?
+            Quando pensamos em criar o Mercadão nossa missão era criar uma
+            plataforma interativa entre cliente e vendedor, onde todos poderiam
+            comprar e vender seus produtos dentro da universidade Puc Minas.
+            Assim tornando o site mais seguro. Entregamos ao nossos usuários a
+            autonomia necessária para vender o que quiser dentro da plataforma.
           </p>
         </div>
         <div class="col contatoCol">
           <h2 class="titulo">Contatos</h2>
           <p class="pContatos">
-            <a href="mailto:mercadaopuc0@gmail.com"><i class="fa-regular fa-envelope fa-2xl"></i></a>
-            <a href="https://www.instagram.com/mercadao.puc/"><i class="fa-brands fa-instagram fa-2xl"></i></a>
-            <a href="https://github.com/ICEI-PUCMinas-PSG-SI-TI/sg_n_2022-1-mercadao-da-puc"><i class="fa-brands fa-github fa-2xl"></i></a>
+            <a href="mailto:mercadaopuc0@gmail.com" target="_blank"
+              ><i class="fa-regular fa-envelope fa-2xl"></i
+            ></a>
+            <a href="https://www.instagram.com/mercadao.puc/" target="_blank"
+              ><i class="fa-brands fa-instagram fa-2xl"></i
+            ></a>
+            <a
+              target="_blank"
+              href="https://github.com/ICEI-PUCMinas-PSG-SI-TI/sg_n_2022-1-mercadao-da-puc"
+              ><i class="fa-brands fa-github fa-2xl"></i
+            ></a>
           </p>
         </div>
       </article>

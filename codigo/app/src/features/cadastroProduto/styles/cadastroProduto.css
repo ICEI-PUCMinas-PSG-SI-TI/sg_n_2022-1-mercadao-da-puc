@@ -14,22 +14,27 @@ body {
 }
 .header {
   justify-content: space-between;
+}
+.textarea {
+  display: block;
+  width: 100%;
+  height: 8rem;
+  resize: none;
+}
+.header {
+  justify-content: space-between;
   background-color: #dc3545;
 }
 
 .segundaDiv {
   flex-grow: 2;
 }
-.btnSearch {
-  margin: -5px;
-}
-
 .logo {
   width: 80%;
 }
 .logo img {
   width: 100%;
-  max-width: 270px;
+  max-width: 360px;
 }
 .formSearch {
   width: 100%;
@@ -39,16 +44,20 @@ body {
 }
 .login {
   text-decoration: none;
-  color: #fff !important;
+  color: #000 !important;
   font-size: 1rem !important;
 }
-
 .loginDiv:hover {
   color: #dc3545;
 }
 .logado {
   text-decoration: none;
-  color: #fff !important;
+  color: rgb(255, 255, 255) !important;
+  font-size: 1rem !important;
+}
+.favoritos {
+  text-decoration: none;
+  color: rgb(255, 255, 255) !important;
   font-size: 1rem !important;
 }
 .logado:hover {
@@ -61,11 +70,6 @@ body {
   justify-content: space-between;
 }
 
-.favoritos {
-  text-decoration: none;
-  color: #fff !important;
-  font-size: 1rem !important;
-}
 #btnMobile {
   display: none;
 }
@@ -121,10 +125,6 @@ body {
 }
 .pContatos a {
   color: rgb(189, 39, 39);
-}
-footer {
-  background-color: #120e27f8;
-  color: white;
 }
 
 @media screen and (max-width: 768px) {
