@@ -12,6 +12,23 @@ Além da proposta de poder anunciar os produtos, os usuários que estiverem em n
 * Lucca de Oliveira Filizzola
 * Matheus Pereira
 
+## Breve descrião das Tarefas
+
+* Aleksander Ribeiro Vale -> Tela de favoritos e de perfil, implementação da api e melhorias gerais no site
+* Carlos Eduardo Meints -> Cadastro de produtos, pesquisa(filtro) e  melhorias gerais no site
+* Henrique resende da fonseca alves -> Realizou grande parte do html/css das páginas, além de auxiliar em melhorias gerias no site
+* Lucca de Oliveira Filizzola -> Liderança,Cadastro/Login de usuário e melhorias gerais no site
+* Matheus Pereira -> Cadastro de produtos e pesquisa(filtro)
+
+## Link do vídeo
+
+
+## Instrução para início dos Testes
+
+*Os testes devem começar atrávés da tela home.html, no canto superior direito da tela vai ter opção de criar conta, e após criar a conta o usuário vai poder registrar produtos
+
+
+
 
 ## Professores responsáveis
 * João Caram Santos de Oliveira
