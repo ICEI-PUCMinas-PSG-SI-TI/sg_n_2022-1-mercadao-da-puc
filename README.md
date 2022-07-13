@@ -12,7 +12,7 @@ Além da proposta de poder anunciar os produtos, os usuários que estiverem em n
 * Lucca de Oliveira Filizzola
 * Matheus Pereira
 
-## Breve descrião das Tarefas
+## Breve descrição das Tarefas
 
 * Aleksander Ribeiro Vale -> Tela de favoritos e de perfil, implementação da api e melhorias gerais no site
 * Carlos Eduardo Meints -> Cadastro de produtos, pesquisa(filtro) e  melhorias gerais no site
